@@ -1,0 +1,41 @@
+.heroview {
+  width: 100%;
+  height: 300px;
+  background: linear-gradient(to bottom,#4E1F8C, #A36FF3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: white;
+}
+.intro {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.hook {
+  font-size: 24px;
+  text-align: center;
+  max-width: 600px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  margin: 0 20px;
+  line-height: 1.4;
+}
+.getstartedbtn {
+  margin-top: 20px;
+  padding: 10px 40px;
+  font-size: 18px;
+  color: #4E1F8C;
+  background-color: white;
+  border: none;
+  border-radius: 22px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+}
+.btntxt {
+  font-weight: bold;
+}

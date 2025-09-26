@@ -1,0 +1,23 @@
+.resume-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  
+}
+
+.category-item {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 22px;
+  font-weight: 500;
+  width: fit-content; /* only as wide as text */
+}
+
+/* Conditional styles by status */
+.category-item.pending {
+  background-color: yellow;
+}
+
+.category-item.completed {
+  background-color: lightgreen;
+}

@@ -1,0 +1,42 @@
+/* Fixed Progress Bar */
+.progress-bar-container {
+  padding: 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  padding: 12px 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;;
+}
+
+.progress-bar-wrapper {
+  width: 100%;
+  background: #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  position: relative;
+  height: 24px;
+  width: 100%;
+  background: blue;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.progress-bar-text {
+  transform: translateX(-50%);
+  font-size: 20px;
+  font-weight: 500;
+  color: black;
+  line-height: 24px;
+  margin-top: 10px;
+}

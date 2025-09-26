@@ -1,6 +1,8 @@
 import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/home";
+import Getstartedwindow from "./components/getstartedComponents/getstartedwindow";
+
 
 
 function App() {
@@ -8,6 +10,7 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/interviewai" element={ <Getstartedwindow />} />
       </Routes>
     </div>
   );

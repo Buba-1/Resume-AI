@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./recorder.css";
+import { sendToDeepgram } from "../../functions/deepgramfunctions";
 
-const AudioRecorder = ({ onStateChange }) => {
+const AudioRecorder = ({ onStateChange, onTranscription}) => {
   const [recorderState, setRecorderState] = useState("ready");
   const [timeLeft, setTimeLeft] = useState(599);
   const [isRecordingPaused, setIsRecordingPaused] = useState(false);
@@ -79,6 +80,17 @@ const AudioRecorder = ({ onStateChange }) => {
     }
   };
 
+  // 4. Finish Recording
+  const handleFinishRecording = () => {
+    if (
+      mediaRecorderRef.current &&
+      mediaRecorderRef.current.state !== "inactive"
+    ) {
+      isCancelRef.current = false;
+      mediaRecorderRef.current.stop();
+    }
+  };
+
   // 2. Cancel Recording / Preview
   const handleCancel = () => {
     if (
@@ -108,26 +120,29 @@ const AudioRecorder = ({ onStateChange }) => {
     }
   };
 
-  // 4. Finish Recording
-  const handleFinishRecording = () => {
-    if (
-      mediaRecorderRef.current &&
-      mediaRecorderRef.current.state !== "inactive"
-    ) {
-      isCancelRef.current = false;
-      mediaRecorderRef.current.stop();
-    }
-  };
-
   // 5. Send Recording (from preview)
-  const handleSendRecording = () => {
+  const handleSendRecording = async () => {
     updateRecorderState("sent");
-    
-    const timer = setTimeout(() => {
-      updateRecorderState("transcribed"); // fixed typo
-      clearTimeout(timer); // optional, but okay for clarity
-    }, 3000);
 
+    if (!audioUrl) {
+      console.log("No audio URL to send.");
+      return;
+    }
+
+    try {
+      // send audio to Deepgram
+      const receivedTranscript = await sendToDeepgram(audioUrl);
+
+      onTranscription(receivedTranscript); // pass transcript to parent 
+
+      // update recorder state immediately
+      updateRecorderState("transcribed");
+
+      console.log("Final transcript:", receivedTranscript);
+    } catch (error) {
+      console.error("Failed to create blob from audioUrl:", error);
+      updateRecorderState("error");
+    }
   };
 
   // 6. Pause / Resume Preview (audio playback)

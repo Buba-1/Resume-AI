@@ -2,24 +2,11 @@ import React, { useState, useEffect } from "react";
 import { FaMicrophone, FaPlay } from "react-icons/fa";
 import "./recorderwindow.css";
 import RecorderModal from "./recordermodal";
+import questionsData from "./questions";
+import { processUserDetails } from "../../functions/openaicreate";
 
 const QuestionsScreen = ({ arrayExtractor }) => {
-  const [questions, setQuestions] = useState([
-    {
-      id: 1,
-      title: "Education",
-      instruction: "Please describe your highest level of education.",
-      status: "unanswered",
-      recording: null,
-    },
-    {
-      id: 2,
-      title: "Work Experience",
-      instruction: "Describe your most recent job experience.",
-      status: "unanswered",
-      recording: null,
-    },
-  ]);
+  const [questions, setQuestions] = useState(questionsData);
 
   const [finalArray, setFinalArray] = useState([]);
   const [activeQuestionId, setActiveQuestionId] = useState(null);
@@ -31,6 +18,14 @@ const QuestionsScreen = ({ arrayExtractor }) => {
       arrayExtractor(finalArray);
     }
   }, [finalArray, arrayExtractor]);
+
+  // For debugging: log finalArray whenever it updates
+  useEffect(() => {
+    console.log(
+      "Final Array Updated, the right way to track the update using console log:",
+      finalArray
+    );
+  }, [finalArray]);
 
   // Called when user clicks mic (does not record directly)
   const handleMicClick = (questionId) => {
@@ -55,6 +50,8 @@ const QuestionsScreen = ({ arrayExtractor }) => {
       setFinalArray((prev) => [...prev, { title: questionTitle, body: text }]);
     }
 
+    console.log("finalArray updated:", finalArray);
+
     // Mark question as answered
     setQuestions((prev) =>
       prev.map((q) =>
@@ -64,40 +61,75 @@ const QuestionsScreen = ({ arrayExtractor }) => {
   };
 
   // Handle Submit button
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (arrayExtractor) {
       arrayExtractor(finalArray);
     }
-    alert("Final array sent to parent!");
+
+    alert("Final array sent for processing. Check console for details.");
+try {
+  const receivedData = await processUserDetails(finalArray);
+
+  let parsedData;
+  if (typeof receivedData === "string") {
+    try {
+      parsedData = JSON.parse(receivedData);
+      console.log("✅ Parsed JSON from OpenAI:", parsedData);
+    } catch (e) {
+      console.warn(
+        "⚠️ Could not parse response as JSON, logging raw data instead."
+      );
+      console.log("Raw response:", receivedData);
+      parsedData = null;
+    }
+  } else {
+    // Already an object/array
+    parsedData = receivedData;
+    console.log("✅ Received structured data not json:", parsedData);
+  }
+
+  // You can still work with parsedData safely
+  if (parsedData) {
+    parsedData.forEach((item) => {
+      console.log("title:", item.title);
+      console.log("Description:", item.description);
+      console.log("Bulletpoints:", item.bulletpoints);
+    });
+  }
+} catch (error) {
+  console.error("❌ Error while processing user details:", error);
+}
   };
 
   return (
-    <div className="list-container">
-      {questions.map((q) => {
-        const isActive = activeQuestionId === q.id && showModal;
-        return (
-          <div
-            key={q.id}
-            className={`list-item ${isActive ? "active" : ""} ${
-              q.status === "answered" ? "answered" : ""
-            }`}
-          >
-            <h3>{q.title}</h3>
-            <p>{q.instruction}</p>
+    <div className="window-container">
+      <div className="list-container">
+        {questions.map((q) => {
+          const isActive = activeQuestionId === q.id && showModal;
+          return (
+            <div
+              key={q.id}
+              className={`list-item ${isActive ? "active" : ""} ${
+                q.status === "answered" ? "answered" : ""
+              }`}
+            >
+              <h3>{q.title}</h3>
+              <p>{q.instruction}</p>
 
-            <div className="button-group">
-              {/* Only show mic for unanswered questions */}
-              {q.status !== "answered" && (
-                <button onClick={() => handleMicClick(q.id)}>
-                  <FaMicrophone />
-                </button>
-              )}
+              <div className="button-group">
+                {/* Only show mic for unanswered questions */}
+                {q.status !== "answered" && (
+                  <button onClick={() => handleMicClick(q.id)}>
+                    <FaMicrophone />
+                  </button>
+                )}
+              </div>
+
+              <small>Status: {q.status}</small>
             </div>
-
-            <small>Status: {q.status}</small>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
 
       {/* Submit button at the bottom */}
       <div style={{ marginTop: "20px" }}>

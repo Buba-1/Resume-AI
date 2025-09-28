@@ -1,7 +1,6 @@
 import React from "react";
-import EditorWindow from "../editorcomponents/editorwindow";
 import QuestionsScreen from "../recorderComponents/recorderwindow";
-import RecorderModal from "../recorderComponents/recordermodal";
+import Resume from "../buildercomponent/builderwindow";
 
 const Getstartedscreen = () => {
   return (

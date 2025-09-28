@@ -5,11 +5,10 @@ import React, { useState } from "react";
 import IntroSection from "./introsection";
 import TranscriptList from "./transcriptslist";
 import Modal from "./modalcomponent/modal"; 
-import "./GetStartedWindow.css";
 import transcription from "./transcript";
 import Progressbar from "./progressbar";
 
-const GetStartedWindow = () => {
+const EditorWindow = () => {
   const [transcripts, setTranscripts] = useState(transcription);
 
   const [confirmedArray, setConfirmedArray] = useState([]);
@@ -109,4 +108,4 @@ const GetStartedWindow = () => {
   );
 };
 
-export default GetStartedWindow;
+export default EditorWindow;

@@ -1,0 +1,29 @@
+.list-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 16px;
+}
+
+.list-item.answered {
+  box-shadow: 0 0 5px 2px green; /* Green shadow for answered questions */
+}
+
+.list-item {
+  width: 48%;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.list-item.active {
+  border: 3px solid green;
+}
+
+.button-group {
+  display: flex;
+  gap: 8px;
+}

@@ -13,11 +13,7 @@ const QuestionsScreen = ({ arrayExtractor }) => {
   const [showModal, setShowModal] = useState(false);
 
   // Whenever finalArray changes, pass it to the parent via arrayExtractor
-  useEffect(() => {
-    if (arrayExtractor) {
-      arrayExtractor(finalArray);
-    }
-  }, [finalArray, arrayExtractor]);
+
 
   // For debugging: log finalArray whenever it updates
   useEffect(() => {

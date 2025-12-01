@@ -1,0 +1,50 @@
+.references-container {
+  margin: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fafafa;
+}
+
+.reference-block {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.reference-block input,
+.reference-block textarea {
+  display: block;
+  width: 100%;
+  margin: 6px 0;
+  padding: 8px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+button {
+  margin-top: 8px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.complete-btn {
+  background-color: #2196f3;
+  color: white;
+  margin-left: 10px;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+  margin-top: 10px;
+}

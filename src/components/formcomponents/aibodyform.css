@@ -1,0 +1,88 @@
+.editor-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+}
+
+.editor-container h2 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.editor-card {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+.editor-card input,
+.editor-card textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.editor-card textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.bullets-container label {
+  font-weight: bold;
+  display: block;
+  margin-top: 8px;
+}
+
+.bullet-btn {
+  margin-top: 8px;
+  background-color: #007bff;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.bullet-btn:hover {
+  background-color: #0056b3;
+}
+
+.editor-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.editor-actions button {
+  flex: 1;
+  margin: 0 6px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.editor-actions button:first-child {
+  background-color: #007bff;
+}
+
+.editor-actions button:first-child:hover {
+  background-color: #0056b3;
+}
+
+.complete-btn {
+  background-color: green !important;
+}
+
+.complete-btn:hover {
+  background-color: darkgreen !important;
+}

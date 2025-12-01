@@ -1,0 +1,97 @@
+.preferences-container {
+  font-family: Arial, sans-serif;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 50px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.preferences-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto;
+}
+
+.preference-section {
+  padding: 15px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.preference-section:last-child {
+  border-bottom: none;
+}
+
+.preference-section h3 {
+  margin: 0 0 10px 0;
+  font-weight: 600;
+  color: #333;
+}
+
+.preference-section button {
+  margin-right: 10px;
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  background-color: #f7f7f7;
+  transition: all 0.2s;
+}
+
+.preference-section button:hover {
+  background-color: #e2e2e2;
+  transform: translateY(-1px);
+}
+
+.preference-section button.selected {
+  box-shadow: 0 0 8px 2px rgba(52, 152, 219, 0.6);
+  background-color: #eaf2fb;
+  border-color: #3498db;
+}
+
+.color-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.color-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #ccc;
+  transition: transform 0.2s, border 0.2s, box-shadow 0.2s;
+}
+
+.color-circle:hover {
+  transform: scale(1.1);
+}
+
+.color-circle.selected {
+  border: 3px solid #333;
+  box-shadow: 0 0 10px 3px rgba(52, 152, 219, 0.6);
+}
+
+.preferences-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.preferences-actions button {
+  padding: 8px 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  background-color: #f7f7f7;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.preferences-actions button:hover {
+  background-color: #e2e2e2;
+  transform: translateY(-1px);
+}

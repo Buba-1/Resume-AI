@@ -1,0 +1,150 @@
+.resume-header {
+  text-align: left;
+  padding: 20px;
+  border-bottom: 2px solid #ccc;
+  font-family: Arial, sans-serif;
+  background-color: aquamarine;
+}
+
+.resume-name {
+  font-size: 32px;
+  margin: 0;
+  font-weight: bold;
+  color: #0077cc;
+}
+
+.resume-contact {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.resume-contact p {
+  margin: 4px 0;
+}
+
+.resume-contact a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.resume-contact a:hover {
+  text-decoration: underline;
+}
+
+.default-body {
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
+  max-width: 900px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.sections {
+  margin-bottom: 28px;
+}
+
+.resume-section {
+  margin-bottom: 22px;
+  padding-bottom: 8px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+  color: #111;
+}
+
+.section-description {
+  margin: 0 0 10px 0;
+  color: #444;
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+.bullet-list {
+  margin: 0;
+  padding-left: 18px;
+  list-style-type: disc;
+}
+
+.bullet-item {
+  margin-bottom: 6px;
+  line-height: 1.45;
+  font-size: 14.5px;
+}
+
+.references {
+  border-top: 1px dashed #d0d0d0;
+  padding-top: 18px;
+  margin-top: 18px;
+}
+
+.references-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+}
+
+.no-refs {
+  color: #666;
+  font-size: 14px;
+}
+
+.refs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ref-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 6px;
+}
+
+.ref-left {
+  flex: 1 1 40%;
+}
+
+.ref-right {
+  flex: 1 1 60%;
+}
+
+.ref-name {
+  margin: 0 0 4px 0;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.ref-institute {
+  margin: 0;
+  font-size: 13.5px;
+  color: #555;
+}
+
+.ref-details {
+  margin: 0 0 6px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.ref-contact {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 13.5px;
+  color: #444;
+}
+
+@media (max-width: 640px) {
+  .ref-item {
+    flex-direction: column;
+  }
+}

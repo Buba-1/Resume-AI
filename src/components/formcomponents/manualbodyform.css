@@ -1,0 +1,80 @@
+.data-form-container {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+}
+
+.data-form-container h2 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.data-form-container input,
+.data-form-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.data-form-container textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.data-form-container button {
+  padding: 10px 14px;
+  margin: 8px 4px 8px 0;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.data-form-container button:hover {
+  background-color: #0056b3;
+}
+
+.bullets-container label {
+  font-weight: bold;
+  display: block;
+  margin: 8px 0 4px;
+}
+
+.data-display {
+  margin-top: 20px;
+}
+
+.data-card {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.data-card h4 {
+  margin: 0 0 6px;
+}
+
+.data-card ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.complete-btn {
+  width: 100%;
+  margin-top: 12px;
+  background-color: green !important;
+}
+
+.complete-btn:hover {
+  background-color: darkgreen !important;
+}

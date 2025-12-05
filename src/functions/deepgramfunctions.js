@@ -10,7 +10,7 @@ const sendToDeepgram = async (uri) => {
       {
         method: "POST",
         headers: {
-          Authorization: "Token ",
+          Authorization: `Token ${apiKey}`,
           "Content-Type": "audio/m4a",
         },
         body: blob,

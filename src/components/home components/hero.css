@@ -1,29 +1,82 @@
 .heroview {
   width: 100%;
-  height: 300px;
-  background: linear-gradient(to bottom,#4E1F8C, #A36FF3);
+  background: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
-  color: white;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+.herocontainer {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
 }
 .intro {
   font-size: 48px;
   font-weight: bold;
   margin-bottom: 10px;
   text-align: center;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  color: navy; 
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .hook {
-  font-size: 24px;
+  font-size: 44px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   text-align: center;
   max-width: 600px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-  margin: 0 20px;
+  color: grey; 
+  margin: 0px;
+  padding: 0px;
   line-height: 1.4;
 }
+.hook1 {
+  font-size: 16px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
+  max-width: 600px;
+  color: grey; 
+  margin: 10px;
+  line-height:1.4;
+}
+
+.hook2 {
+  font-size: 16px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
+  max-width: 600px;
+  color: grey; 
+  margin: 0px;
+  line-height: 1.4;
+}
+
+.span1 {
+  
+  background-color: navy;   /* blue background */
+  color: white;
+  padding: 10px 22px;           /* needed to see shape */
+  border-radius: 50px;         /* rounded corners */
+  display: inline-block;       /* required */
+
+}
+.span2 {
+ background-color: navy;   /* blue background */
+  color: white;
+  padding: 3px 22px;           /* needed to see shape */
+  border-radius: 50px;         /* rounded corners */
+  display: inline-block;     
+}
+
+
+
+
+
+
+
 .getstartedbtn {
   margin-top: 20px;
   padding: 10px 40px;
@@ -39,3 +92,8 @@
 .btntxt {
   font-weight: bold;
 }
+
+/* 
+linear-gradient(to bottom,#4E1F8C, #A36FF3)
+
+*/

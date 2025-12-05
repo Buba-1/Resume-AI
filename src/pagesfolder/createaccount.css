@@ -1,0 +1,130 @@
+
+        :root {
+          --color-primary: #007bff; /* A modern blue for links/accents */
+          --color-text: #333;
+          --color-light-gray: #f7f7f7; /* Background color for containers */
+          --color-border: #e0e0e0;
+          --color-shadow: rgba(0, 0, 0, 0.08);
+          --border-radius-base: 12px;
+          --spacing-unit: 1rem; /* 16px */
+        }
+
+        /* --- Registration Container & Layout (Responsive) --- */
+        .login-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh; /* Full viewport height */
+          background-color: var(--color-light-gray);
+          padding: var(--spacing-unit);
+          box-sizing: border-box; 
+          font-family: 'Inter', sans-serif;
+        }
+
+        .login-card {
+          background: white;
+          padding: 2.5rem; 
+          border-radius: var(--border-radius-base);
+          box-shadow: 0 10px 30px var(--color-shadow); 
+          width: 100%;
+          max-width: 450px; /* Slightly wider card for more fields */
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem; 
+          transition: transform 0.3s ease-out;
+        }
+
+        .title {
+          text-align: center;
+          margin-bottom: 0.5rem;
+          color: var(--color-text);
+          font-weight: 700;
+          font-size: 2rem;
+        }
+
+        /* --- Form and Inputs --- */
+        .registration-form {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem; /* Spacing between form elements */
+        }
+
+        .name-row {
+          display: flex;
+          gap: 1rem;
+        }
+
+        .input {
+          width: 100%;
+          padding: 1rem 1.25rem;
+          border: 1px solid var(--color-border);
+          border-radius: var(--border-radius-base);
+          font-size: 1rem;
+          transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .input:focus {
+          outline: none;
+          border-color: var(--color-primary);
+          box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); 
+        }
+
+        /* --- Buttons --- */
+        .btn-primary {
+          width: 100%;
+          padding: 1rem;
+          background: black;
+          color: white;
+          border-radius: var(--border-radius-base);
+          border: none;
+          cursor: pointer;
+          font-size: 1rem;
+          font-weight: 600;
+          transition: background-color 0.2s, transform 0.1s;
+          margin-top: 0.5rem;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+          background-color: #333; 
+        }
+
+        .btn-primary:active:not(:disabled) {
+          transform: scale(0.99); 
+        }
+
+        .btn-primary:disabled {
+            background-color: #a0a0a0;
+            cursor: not-allowed;
+        }
+
+        /* --- Bottom Links --- */
+        .login-link {
+          text-align: center;
+          font-size: 0.9375rem;
+          display: flex;
+          justify-content: center;
+          gap: 0.375rem; 
+          margin-top: 1rem; 
+        }
+
+        .link-large {
+          font-weight: 600;
+          color: var(--color-primary);
+          text-decoration: none;
+          transition: text-decoration 0.2s;
+        }
+
+        .link-large:hover {
+          text-decoration: underline; 
+        }
+
+        /* Mobile responsiveness for name fields */
+        @media (max-width: 500px) {
+          .name-row {
+            flex-direction: column;
+            gap: 1rem;
+          }
+          .login-card {
+            padding: 1.5rem;
+          }
+        }

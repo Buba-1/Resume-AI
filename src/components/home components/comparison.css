@@ -1,0 +1,88 @@
+.comparison-container {
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.comparison-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+/* Card styling */
+.comparison-card {
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.comparison-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Headings */
+.comparison-heading {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.bad-text {
+  color: #d64545;
+}
+
+.good-text {
+  color: #27a844;
+}
+
+/* Image container */
+.comparison-image {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.comparison-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Bullet list */
+.comparison-list {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.comparison-list li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #444;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .comparison-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-card {
+    text-align: center;
+  }
+
+  .comparison-image img {
+    /* maybe reduce height or leave auto */
+  }
+}

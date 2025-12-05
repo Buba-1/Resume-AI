@@ -3,11 +3,12 @@ import "./personal.css"; // external stylesheet
 
 const PersonalForm = ({ initialData = {}, passData }) => {
   const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    website: "",
-    linkName: "",
+    name: "jj",
+    email: "@gmail.com",
+    phone: "34422",
+    websiteName: "linkedin",
+    websitelink: "wwww.linkedin.com/in/jj",
+    address: "New York",
   });
 
   // populate form with initial data if provided
@@ -26,9 +27,9 @@ const PersonalForm = ({ initialData = {}, passData }) => {
     }));
   };
 
-  // handle button click
   const handleSubmit = () => {
-    passData(form); // send data to parent
+    console.log("Personal Form Data:", form);
+    passData(form);
   };
 
   return (
@@ -60,18 +61,26 @@ const PersonalForm = ({ initialData = {}, passData }) => {
       />
 
       <input
-        type="url"
-        name="website"
-        placeholder="Website Link"
-        value={form.website}
+        type="text"
+        name="address"
+        placeholder="Address"
+        value={form.address}
         onChange={handleChange}
       />
 
       <input
         type="text"
-        name="linkName"
+        name="websiteName"
         placeholder="Name of the Link"
-        value={form.linkName}
+        value={form.websiteName}
+        onChange={handleChange}
+      />
+
+      <input
+        type="url"
+        name="websitelink"
+        placeholder="Website Link"
+        value={form.websitelink}
         onChange={handleChange}
       />
 

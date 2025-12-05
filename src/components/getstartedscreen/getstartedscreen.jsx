@@ -6,6 +6,8 @@ import ReferencesForm from "../formcomponents/referenceform";
 import ManualBodyForm from "../formcomponents/manualbodyform";
 import AiBodyForm from "../formcomponents/aibodyform";
 import ResumeBuilder from "../resumecomponents/resumebuilder";
+import DefaulDesign from "./defauldesign";
+import sampleObject from "./sampledefaultdata";
 
 const Getstartedscreen = () => {
 
@@ -30,17 +32,14 @@ const handleEditedData = (data) => {
 
   return (
     <div>
-
+      {/* <DefaulDesign />*/}
+      <DefaulDesign object={sampleObject} />
       <QuestionsScreen />
       <PersonalForm />
       <ReferencesForm />
       <ManualBodyForm />
-      <AiBodyForm 
-      initialArray={initialData} 
-      passData={handleEditedData} />
+      <AiBodyForm initialArray={initialData} passData={handleEditedData} />
       <ResumeBuilder />
-
-
     </div>
   );
 };

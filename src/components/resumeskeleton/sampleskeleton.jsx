@@ -4,24 +4,9 @@ import ResumePreferences from "./resumepreferences";
 import Resumelistcontainer from "./resumelistcontainer";
 import DesignOne from "../Resumedesigns/designone";
 import DefaultDesign from "../Resumedesigns/defaultdesign";
+import sampleObject from "../Resumedesigns/sampledata";
 
-const HelloWorld = () => {
-  return (
-    <div
-      style={{
-        backgroundColor: "blue",
-        color: "white",
-        padding: "40px",
-        fontSize: "32px",
-        fontFamily: "Arial, sans-serif",
-      }}
-    >
-      Hello World
-    </div>
-  );
-};
-
-function SampleSkeleton() {
+function SampleSkeleton({ colorTwo, objectTwo, imageUrlTwo }) {
   const [pdfBlob, setPdfBlob] = useState(null);
   const [modalVisible, setModalVisible] = useState(false);
   const [fileName, setFileName] = useState("");
@@ -43,20 +28,41 @@ function SampleSkeleton() {
       let htmlString = "";
 
       if (design === "DesignOne") {
-        htmlString = ReactDOMServer.renderToString(<DesignOne />);
+        htmlString = ReactDOMServer.renderToString(
+          <DesignOne object={objectTwo} color={resumeColor} />
+        );
       }
 
       if (design === "DefaultDesign") {
-        htmlString = ReactDOMServer.renderToString(<DefaultDesign />);
+        htmlString = ReactDOMServer.renderToString(
+          <DefaultDesign object={objectTwo} color={resumeColor} />
+        );
       }
-      
-      htmlString = ReactDOMServer.renderToString(<HelloWorld />);
 
       if (!htmlString) {
         alert("Invalid design type!");
         return null;
       }
 
+      // ---  Measure HTML height using hidden iframe ---
+      const iframe = document.createElement("iframe");
+      iframe.style.position = "absolute";
+      iframe.style.left = "-9999px";
+      iframe.style.top = "-9999px";
+      document.body.appendChild(iframe);
+
+      iframe.contentDocument.open();
+      iframe.contentDocument.write(htmlString);
+      iframe.contentDocument.close();
+
+      await new Promise((r) => setTimeout(r, 150)); // wait for layout
+
+      const bodyHeight = iframe.contentDocument.body.scrollHeight;
+      console.log("Measured Height:", bodyHeight);
+
+      document.body.removeChild(iframe);
+
+      // Send to server
       const response = await fetch(
         "https://ai-voice-resume-server.onrender.com/sample_endpoint",
         {
@@ -64,7 +70,10 @@ function SampleSkeleton() {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ html: htmlString }),
+          body: JSON.stringify({
+            html: htmlString,
+            height: 1500, //  send height
+          }),
         }
       );
 
@@ -129,7 +138,12 @@ function SampleSkeleton() {
       </p>
 
       <ResumePreferences passColor={receiveColor} />
-      <Resumelistcontainer chosenDesign={handleChosenDesign} />
+      <Resumelistcontainer
+        chosenDesign={handleChosenDesign}
+        colorOne={resumeColor}
+        objectOne={objectTwo}
+        imageUrlOne={imageUrlTwo}
+      />
 
       {/*    */}
       <h2 style={{ marginBottom: "20px" }}>React → PDF Generator</h2>

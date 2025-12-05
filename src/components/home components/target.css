@@ -1,0 +1,52 @@
+.audience-container {
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.audience-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #001f3f; /* Navy brand color */
+  margin-bottom: 40px;
+}
+
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* Audience cards */
+.audience-card {
+  background: white;
+  padding: 18px 24px;
+  border-radius: 12px;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #001f3f; /* Navy accent */
+  border: 2px solid #001f3f33; /* soft navy border */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: 0.3s ease;
+}
+
+/* Hover effect */
+.audience-card:hover {
+  background: #001f3f;
+  color: white;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile size adjustments */
+@media (max-width: 600px) {
+  .audience-title {
+    font-size: 1.9rem;
+  }
+
+  .audience-card {
+    font-size: 1rem;
+    padding: 14px 18px;
+  }
+}

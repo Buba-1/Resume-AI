@@ -1,0 +1,69 @@
+/* Container */
+.how-it-works-section {
+  padding: 60px 20px;
+  background: #fafafa;
+  text-align: center;
+}
+
+.hiw-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+/* Step Cards */
+.hiw-steps-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.hiw-step-card {
+  background: white;
+  width: 300px;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  transition: transform 0.25s ease;
+}
+
+.hiw-step-card:hover {
+  transform: translateY(-5px);
+}
+
+.hiw-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.hiw-step-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.hiw-step-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.hiw-step-list li {
+  margin-bottom: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hiw-steps-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hiw-step-card {
+    width: 90%;
+  }
+}

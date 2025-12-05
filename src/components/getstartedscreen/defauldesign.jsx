@@ -1,7 +1,6 @@
 import React from "react";
 
-
-const DesignOne = ({ color, object, imageUrl }) => {
+const DefaulDesign = ({ color, object, imageUrl }) => {
   return (
     <div
       style={{
@@ -17,7 +16,7 @@ const DesignOne = ({ color, object, imageUrl }) => {
           <div
             style={{
               width: "100%",
-              backgroundColor: color || "green",
+              backgroundColor: color || "#000080",
               padding: "20px",
               margin: "0px",
               color: "lightgrey",
@@ -358,7 +357,7 @@ const DesignOne = ({ color, object, imageUrl }) => {
       </div>
       <div
         style={{
-          backgroundColor: "green",
+          backgroundColor: "#000080",
           width: "100%",
           height: "70px",
         }}
@@ -367,4 +366,4 @@ const DesignOne = ({ color, object, imageUrl }) => {
   );
 };
 
-export default DesignOne;
+export default DefaulDesign;

@@ -3,7 +3,9 @@
   white-space: nowrap;
   width: 100%;
   box-sizing: border-box;
-  background-color: lightsmoke;
+  background-color: #000080;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .slider-track {
@@ -18,7 +20,7 @@
   height: 500px;
   object-fit: cover;
   margin-right: 30px;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-
+ box-shadow: 
+  0 0 10px rgba(255, 255, 255, 0.8);
 
 }

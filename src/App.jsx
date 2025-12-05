@@ -8,10 +8,18 @@ import Manualresumepage from "../src/pagesfolder/manualresumepage";
 import Resumerecordingpage from "../src/pagesfolder/resumerecordingpage";
 import Resumebuilderpage from "../src/pagesfolder/resumebuilderpage";
 import Resumeretouchpage from "../src/pagesfolder/resumeretouchpage";
+import Navbar from "./components/Reusable components/navbar"; 
+import PrivacyPolicy from "./pagesfolder/privacypolicy";
+import TermsOfService from "./pagesfolder/termsofservice";
+import CookiePolicy from "./pagesfolder/cookiepolicy";
+import UserGuide from "./pagesfolder/userguide";  
+import LoginPage from "./pagesfolder/login";
+import CreateAccount from "./pagesfolder/createaccount";
 
 function App() {
   return (
     <div>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/interviewai" element={<Getstartedwindow />} />
@@ -21,6 +29,12 @@ function App() {
         <Route path="/recording_resume" element={<Resumerecordingpage />} />
         <Route path="/retouch_resume" element={<Resumeretouchpage />} />
         <Route path="/build_resume" element={<Resumebuilderpage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/cookie-policy" element={<CookiePolicy />} />
+        <Route path="/user-guide" element={<UserGuide />} /> 
+        <Route path="/login" element={<LoginPage />} /> 
+        <Route path="/create-account" element={<CreateAccount />} />
       </Routes>
     </div>
   );

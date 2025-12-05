@@ -1,120 +1,372 @@
 import React from "react";
-import "./defaultdesign.css";
 
-const DefaultDesign = ({ userDetails = [], userRef = [], userData = {} }) => {
-  // Sample data generated inside the component
-  const sampleData = {
-    name: userData?.name || "John Doe",
-    email: userData?.email || "johndoe@example.com",
-    phone: userData?.phone || "+1 555 123 4567",
-    website: userData?.website || "https://johndoe.dev",
-    linkName: userData?.linkName || "Portfolio",
-  };
-
+const DefaulDesign = ({ color, object, imageUrl }) => {
   return (
-    <div className="default-body">
-      {/* Header Section */}
-      <div className="resume-header">
-        <h1 className="resume-name">{sampleData.name}</h1>
-
-        <div className="resume-contact">
-          <p>
-            Email: <span>{sampleData.email}</span>
-          </p>
-          <p>
-            Phone: <span>{sampleData.phone}</span>
-          </p>
-          <p>
-            Website:{" "}
-            <a
-              href={sampleData.website}
-              target="_blank"
-              rel="noopener noreferrer"
+    <div
+      style={{
+        width: "100%",
+        backgroundColor: "#f7f9fc",
+        padding: "0px",
+        margin: "0px",
+      }}
+    >
+      <div>
+        {/* ------------------------- PERSONAL DETAILS ------------------------- */}
+        {object?.personalObject && (
+          <div
+            style={{
+              width: "100%",
+              backgroundColor: color || "#000080",
+              padding: "20px",
+              margin: "0px",
+              color: "lightgrey",
+            }}
+          >
+            <p
+              style={{
+                color: "white",
+                fontFamily: "sherif",
+                fontSize: "14px",
+                fontWeight: "300",
+              }}
             >
-              {sampleData.website}
-            </a>
-          </p>
-          <p>
-            {sampleData.linkName}:{" "}
-            <a
-              href={sampleData.website}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {sampleData.linkName}
-            </a>
-          </p>
-        </div>
-      </div>
+              Hello, I am
+            </p>
 
-      {/* Resume sections */}
-      <div className="sections">
-        {Array.isArray(userDetails) &&
-          userDetails.length > 0 &&
-          userDetails.map((item, index) => (
-            <section key={index} className="resume-section">
-              {/* Title check */}
-              {item?.title && <h2 className="section-title">{item.title}</h2>}
+            {object.personalObject.name && (
+              <p
+                style={{
+                  color: "white",
+                  fontFamily: "Arial",
+                  fontSize: "50px",
+                  fontWeight: "bold",
+                  marginBottom: "5px",
+                  marginTop: "5px",
+                }}
+              >
+                {object.personalObject.name}
+              </p>
+            )}
 
-              {/* Description check */}
-              {item?.Description && (
-                <p className="section-description">{item.Description}</p>
-              )}
+            {(object.personalObject.email || object.personalObject.phone) && (
+              <p
+                style={{
+                  color: "white",
+                  fontFamily: "sherif",
+                  fontSize: "14px",
+                  fontWeight: "300",
+                  marginBottom: "5px",
+                }}
+              >
+                email :{" "}
+                <span
+                  style={{
+                    color: "whitesmoke",
+                    fontFamily: "sherif",
+                    fontSize: "14px",
+                    fontWeight: "600",
+                  }}
+                >
+                  {object.personalObject.email}
+                </span>
+              </p>
+            )}
 
-              {/* Bulletpoints check */}
-              {Array.isArray(item?.bulletpoints) &&
-                item.bulletpoints.length > 0 && (
-                  <ul className="bullet-list">
-                    {item.bulletpoints.map((point, idx) => (
-                      <li key={idx} className="bullet-item">
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
+            {(object.personalObject.phone || object.personalObject.email) && (
+              <p
+                style={{
+                  color: "white",
+                  fontFamily: "sherif",
+                  fontSize: "14px",
+                  fontWeight: "300",
+                  marginBottom: "5px",
+                }}
+              >
+                phone{" "}
+                <span
+                  style={{
+                    color: "whitesmoke",
+                    fontFamily: "sherif",
+                    fontSize: "14px",
+                    fontWeight: "600",
+                  }}
+                >
+                  {object.personalObject.phone}
+                </span>
+              </p>
+            )}
+
+            {object.personalObject.address && (
+              <p
+                style={{
+                  color: "white",
+                  fontFamily: "sherif",
+                  fontSize: "14px",
+                  fontWeight: "300",
+                  marginBottom: "5px",
+                }}
+              >
+                address{" "}
+                <span
+                  style={{
+                    color: "whitesmoke",
+                    fontFamily: "sherif",
+                    fontSize: "14px",
+                    fontWeight: "600",
+                  }}
+                >
+                  {object.personalObject.address}
+                </span>
+              </p>
+            )}
+
+            {(object.personalObject.websitename ||
+              object.personalObject.websitelink) && (
+              <p
+                style={{
+                  color: "white",
+                  fontFamily: "sherif",
+                  fontSize: "14px",
+                  fontWeight: "300",
+                  marginBottom: "5px",
+                }}
+              >
+                {object.personalObject.websitename}
+                <span
+                  style={{
+                    color: "whitesmoke",
+                    fontFamily: "sherif",
+                    fontSize: "14px",
+                    fontWeight: "600",
+                  }}
+                >
+                  {object.personalObject.websitelink}
+                </span>
+              </p>
+            )}
+          </div>
+        )}
+
+        {/* ------------------------- BODY SECTION ------------------------------ */}
+        {object?.bodyArrayData?.length > 0 && (
+          <div
+            style={{
+              width: "100%",
+              backgroundColor: "",
+              padding: "20px",
+              margin: "0px",
+            }}
+          >
+            {object.bodyArrayData.map((item, index) => (
+              <div
+                style={{
+                  marginTop: "16px",
+                  marginBottom: "16px",
+                  borderBottom: "1px solid color ",
+                }}
+                key={index}
+              >
+                {(item.title || item.Title)&& (
+                  <p
+                    style={{
+                      marginBottom: "5px",
+                      fontSize: "20px",
+                      fontWeight: "600",
+                      color: color || "#000080",
+                      fontFamily: "Arial",
+                      paddingBottom: "10px",
+                    }}
+                  >
+                    {item.title || item.Title}
+                  </p>
                 )}
-            </section>
-          ))}
-      </div>
+                {(item.description || item.Description || item.body ) && (
+                  <p
+                    style={{
+                      marginBottom: "5px",
+                      fontSize: "16px",
+                      paddingBottom: "10px",
+                    }}
+                  >
+                    {item.description || item.body || item.Description}
+                  </p>
+                )}
 
-      {/* References Section */}
-      {Array.isArray(userRef) && userRef.length > 0 && (
-        <aside className="references">
-          <h2 className="references-title">References</h2>
+                {(item.bulletpoints?.length ?? item.Bulletpoints?.length) >
+                  0 && (
+                  <div
+                    style={{
+                      marginBottom: "5px",
+                      paddingBottom: "10px",
+                      fontSize: "14px",
+                      paddingLeft: "20px",
+                      color: "grey",
+                    }}
+                  >
+                    <ul
+                      style={{
+                        marginBottom: "5px",
+                        fontSize: "14px",
+                        paddingLeft: "20px",
+                        color: "grey",
 
-          <div className="refs-list">
-            {userRef.map((ref, i) => (
-              <div key={i} className="ref-item">
-                <div className="ref-left">
-                  {/* Name */}
-                  {ref?.name && <p className="ref-name">{ref.name}</p>}
-
-                  {/* Institute */}
-                  {ref?.institute && (
-                    <p className="ref-institute">{ref.institute}</p>
-                  )}
-                </div>
-
-                <div className="ref-right">
-                  {/* Details / Role */}
-                  {ref?.details && <p className="ref-details">{ref.details}</p>}
-
-                  {/* Contact */}
-                  <div className="ref-contact">
-                    {ref?.phone && (
-                      <span className="ref-phone">📞 {ref.phone}</span>
-                    )}
-                    {ref?.email && (
-                      <span className="ref-email">✉️ {ref.email}</span>
-                    )}
+                        // Two-column layout
+                        columnCount: 2,
+                        columnGap: "12px",
+                      }}
+                    >
+                      {(item.bulletpoints ?? item.Bulletpoints).map(
+                        (point, idx) => (
+                          <li key={idx} style={{ marginBottom: "4px" }}>
+                            {point}
+                          </li>
+                        )
+                      )}
+                    </ul>
                   </div>
-                </div>
+                )}
               </div>
             ))}
+            {(!object?.referenceArrayData ||
+              object.referenceArrayData.length === 0) && (
+              <div
+                style={{
+                  backgroundColor: "#000080",
+                  width: "100%",
+                  height: "70px",
+                }}
+              ></div>
+            )}
           </div>
-        </aside>
-      )}
+        )}
+
+        {/* ------------------------- REFERENCES ------------------------------ */}
+        {object?.referenceArrayData?.length > 0 && (
+          <div
+            style={{
+              paddingBottom: "25px",
+              fontSize: "14px",
+              paddingLeft: "20px",
+            }}
+          >
+            <p
+              style={{
+                marginBottom: "5px",
+                fontSize: "16px",
+                paddingBottom: "10px",
+                fontSize: "20px",
+                fontWeight: "600",
+                color: color || "#000080",
+                fontFamily: "Arial",
+              }}
+            >
+              References
+            </p>
+
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                columnGap: "20px",
+                //justifyContent: "space-around",
+              }}
+            >
+              {object.referenceArrayData.map((ref, index) => (
+                <div
+                  key={index}
+                  style={{
+                    //width: "50%",
+                    paddingRight: "20px",
+                    marginTop: "20px",
+                  }}
+                >
+                  {ref.name && (
+                    <p
+                      style={{
+                        marginBottom: "4px",
+                        fontSize: "16px",
+                        paddingBottom: "0px",
+                        fontSize: "17px",
+                        fontWeight: "300",
+                        color: "grey",
+                        fontFamily: "Arial",
+                      }}
+                    >
+                      <strong>{ref.name}</strong>
+                    </p>
+                  )}
+
+                  {ref.details && (
+                    <p
+                      style={{
+                        marginBottom: "3px",
+                        fontSize: "11px",
+                        paddingBottom: "0px",
+                        fontWeight: "300",
+                        color: "black",
+                        fontFamily: "Arial",
+                      }}
+                    >
+                      {ref.details}
+                    </p>
+                  )}
+                  {ref.institute && (
+                    <p
+                      style={{
+                        marginBottom: "3px",
+                        fontSize: "11px",
+                        paddingBottom: "0px",
+                        fontWeight: "300",
+                        color: "black",
+                        fontFamily: "Arial",
+                      }}
+                    >
+                      {ref.institute}
+                    </p>
+                  )}
+                  {ref.phone && (
+                    <p
+                      style={{
+                        marginBottom: "3px",
+                        fontSize: "11px",
+                        paddingBottom: "0px",
+                        fontWeight: "300",
+                        color: "black",
+                        fontFamily: "Arial",
+                      }}
+                    >
+                      {ref.phone}
+                    </p>
+                  )}
+                  {ref.email && (
+                    <p
+                      style={{
+                        marginBottom: "3px",
+                        fontSize: "11px",
+                        paddingBottom: "0px",
+                        fontWeight: "300",
+                        color: "black",
+                        fontFamily: "Arial",
+                      }}
+                    >
+                      {ref.email}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+      <div
+        style={{
+          backgroundColor: color || "#000080",
+          width: "100%",
+          height: "70px",
+        }}
+      ></div>
     </div>
   );
 };
 
-export default DefaultDesign;
+export default DefaulDesign;

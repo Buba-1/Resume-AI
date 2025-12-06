@@ -15,6 +15,9 @@ import CookiePolicy from "./pagesfolder/cookiepolicy";
 import UserGuide from "./pagesfolder/userguide";  
 import LoginPage from "./pagesfolder/login";
 import CreateAccount from "./pagesfolder/createaccount";
+import HowToUse from "./pagesfolder/howtouse";
+import MyProfile from "./pagesfolder/myprofile";
+import Footer from "./components/Reusable components/footer";
 
 function App() {
   return (
@@ -32,10 +35,13 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/cookie-policy" element={<CookiePolicy />} />
-        <Route path="/user-guide" element={<UserGuide />} /> 
-        <Route path="/login" element={<LoginPage />} /> 
+        <Route path="/user-guide" element={<UserGuide />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/create-account" element={<CreateAccount />} />
+        <Route path="/how_to_use" element={<HowToUse />} />
+        <Route path="/my_profile" element={<MyProfile />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

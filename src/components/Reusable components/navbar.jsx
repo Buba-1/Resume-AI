@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./navbar.css";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,9 +12,18 @@ const Navbar = () => {
       {/* DESKTOP WINDOW */}
       <div className="nav-window-desktop">
         <ul className="nav-links-desktop">
-          <li>My Account</li>
-          <li>Home</li>
-          <li>Settings</li>
+          <Link to="/">
+            <li>Home</li>
+          </Link>
+          <Link to="/how_to_use">
+            <li>How To Use</li>
+          </Link>
+          <Link to="/my_profile">
+            <li>My Account</li>
+          </Link>
+          <Link to="/options">
+            <li>Get Started</li>
+          </Link>
         </ul>
       </div>
 
@@ -28,9 +38,18 @@ const Navbar = () => {
         {/* MOBILE MENU (Animated) */}
         <div className={`mobile-menu ${isOpen ? "open" : ""}`}>
           <ul>
-            <li>My Account</li>
-            <li>Home</li>
-            <li>Settings</li>
+            <Link to="/">
+              <li>Home</li>
+            </Link>
+            <Link to="/how_to_use">
+              <li>How To Use</li>
+            </Link>
+            <Link to="/my_profile">
+              <li>My Account</li>
+            </Link>
+            <Link to="/options">
+              <li>Get Started</li>
+            </Link>
           </ul>
         </div>
       </div>

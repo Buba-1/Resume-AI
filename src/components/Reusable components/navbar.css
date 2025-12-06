@@ -1,12 +1,16 @@
 /* BASIC NAVBAR WRAPPER */
 .navbar {
   width: 100%;
-  padding: 16px 24px;
+  padding: 30px 24px;
   box-sizing: border-box;
   background: white;
   display: flex;
-  justify-content: space-between;
+  justify-content:center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   align-items: center;
+  color:rgba(0, 0, 0, 0.5);
+  font-weight: 300;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 /* DESKTOP NAV LINKS */
@@ -14,7 +18,7 @@
   list-style: none;
   display: flex;
   gap: 24px;
-  font-size: 18px;
+  font-size: 16px;
   cursor: pointer;
 }
 
@@ -37,7 +41,7 @@
 .bar {
   width: 100%;
   height: 3px;
-  background: black;
+  background: navy;
   border-radius: 10px;
   transition: 0.4s ease;
 }
@@ -63,7 +67,7 @@
   width: 100%;
   background: white;
   position: absolute;
-  top: 70px;
+  top: 50px;
   left: 0;
   padding: 0;
   overflow: hidden;

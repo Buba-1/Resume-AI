@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+
+:root {
+  --color-navy: #1e3a8a;
+  --color-background: #f4f7f9;
+  --color-text: #1f2937;
+  --color-border: #e5e7eb;
+  --border-radius-base: 14px;
+  --shadow-subtle: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.06);
+}
+
+/* Entire Page */
+.profile-page-container {
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  background-color: var(--color-background);
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1rem;
+  box-sizing: border-box;
+}
+
+.profile-content-wrapper {
+  width: 100%;
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Header Card */
+.header-card {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--border-radius-base);
+  box-shadow: var(--shadow-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.user-info-group {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Circle Initials Avatar */
+.initials-avatar {
+  width: 60px;
+  height: 60px;
+  background-color: var(--color-navy);
+  color: white;
+  border-radius: 50%;
+  border: 3px solid var(--color-border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.welcome-message h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* Logout Button */
+.btn-logout {
+  padding: 0.75rem 1.5rem;
+  background: none;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-base);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-logout:hover {
+  background-color: #f0f4f8;
+  border-color: #c9d2db;
+}
+
+/* Resume Section */
+.resume-section-card {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--border-radius-base);
+  box-shadow: var(--shadow-subtle);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.resume-section-card p {
+  font-size: 1.125rem;
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* Create Resume Button */
+.btn-create-resume {
+  padding: 1rem 2rem;
+  background-color: var(--color-navy);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-base);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-create-resume:hover {
+  background-color: #1a3275;
+}
+
+.btn-create-resume:active {
+  transform: scale(0.98);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .profile-content-wrapper {
+    max-width: 100%;
+  }
+
+  .header-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .user-info-group {
+    width: 100%;
+  }
+
+  .btn-logout {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}

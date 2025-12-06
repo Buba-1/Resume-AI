@@ -1,6 +1,7 @@
 .heroview {
   width: 100%;
-  background: white;
+   background: white;
+  box-shadow: 0 0 40px 0px rgba(255, 255, 255, 0.8);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,58 +15,58 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 15px;
+  gap: 0px;
+}
+.hookdiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+  text-align: center;
+  margin: 20px;
 }
 .intro {
-  font-size: 48px;
+  font-size: 68px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
   text-align: center;
-  color: navy; 
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: rgba(0, 0, 60, 0.7); 
+  font-family:'Times New Roman', Times, serif;
 }
 .hook {
-  font-size: 44px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 24px;
+  font-family:'Times New Roman', Times, serif ;
   text-align: center;
-  max-width: 600px;
+  max-width: 100%;
   color: grey; 
   margin: 0px;
   padding: 0px;
   line-height: 1.4;
 }
 .hook1 {
-  font-size: 16px;
+  font-size: 18px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   text-align: center;
-  max-width: 600px;
+  max-width: 100%;
   color: grey; 
-  margin: 10px;
+  margin: 15px;
   line-height:1.4;
 }
 
-.hook2 {
-  font-size: 16px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  text-align: center;
-  max-width: 600px;
-  color: grey; 
-  margin: 0px;
-  line-height: 1.4;
-}
 
 .span1 {
   
-  background-color: navy;   /* blue background */
-  color: white;
+  background-color: rgba(0, 0, 128, 0.555);   /* blue background */
+  color: whitesmoke;
   padding: 10px 22px;           /* needed to see shape */
   border-radius: 50px;         /* rounded corners */
   display: inline-block;       /* required */
 
 }
 .span2 {
- background-color: navy;   /* blue background */
-  color: white;
+ background-color: rgba(0, 0, 128, 0.555);   /* blue background */
+  color: whitesmoke;
   padding: 3px 22px;           /* needed to see shape */
   border-radius: 50px;         /* rounded corners */
   display: inline-block;     

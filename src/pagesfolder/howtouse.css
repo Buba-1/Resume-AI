@@ -1,0 +1,117 @@
+/* Embedded CSS for a clean, navy-themed guide */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+    --color-light-gray: #f9f9f9;
+    --color-text: #333;
+    --border-radius: 12px;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Main container */
+.guide-container {
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 3rem 1rem;
+    background-color: var(--color-light-gray);
+    box-sizing: border-box;
+}
+
+/* Card */
+.guide-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 700px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Header */
+.guide-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.guide-title {
+    color: #1E3A8A; /* NAVY */
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.guide-subtitle {
+    color: var(--color-text);
+    font-size: 1.125rem;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+/* Steps */
+.steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.step-item:last-child {
+    border-bottom: none;
+}
+
+.step-number {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background-color: #1E3A8A; /* NAVY */
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 5px rgba(30, 58, 138, 0.4); /* NAVY shadow */
+}
+
+.step-content {
+    flex-grow: 1;
+}
+
+.step-message {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text);
+}
+
+/* Highlight strong text */
+.step-message strong {
+    color: #1E3A8A; /* NAVY */
+    font-weight: 600;
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+    .guide-card {
+        padding: 1.5rem;
+    }
+    .guide-title {
+        font-size: 1.5rem;
+    }
+    .step-number {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+}

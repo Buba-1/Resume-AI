@@ -11,7 +11,6 @@ import TargetAudience from '../components/home components/target';
 import UserReviewsSection from '../components/home components/reviews';
 import PricingSection from '../components/home components/pricing';
 import FAQSection from '../components/home components/faq';
-import Footer from '../components/Reusable components/footer';
 
 function Home() {
     return (
@@ -27,7 +26,6 @@ function Home() {
         <UserReviewsSection />
         <PricingSection />
         <FAQSection />
-        <Footer />
       </div>
     );
 }

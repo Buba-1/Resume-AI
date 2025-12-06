@@ -1,0 +1,102 @@
+.pricing-section {
+  padding: 60px 20px;
+  background: #f8f9fc;
+}
+
+.pricing-title {
+  text-align: center;
+  font-size: 2.3rem;
+  color: #001f3f; /* navy */
+  margin-bottom: 50px;
+}
+
+/* Grid */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 35px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Pricing Card */
+.pricing-card {
+  background: #fff;
+  padding: 35px 25px;
+  border-radius: 16px;
+  border: 1px solid #e8e8e8;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-6px);
+}
+
+.pricing-plan-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #001f3f;
+  margin-bottom: 10px;
+}
+
+.pricing-price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #001f3f;
+  margin-bottom: 20px;
+}
+
+.pricing-price .one-time {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #555;
+}
+
+/* Features list */
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.pricing-features li {
+  font-size: 1rem;
+  padding: 8px 0;
+  color: #333;
+}
+
+/* Buttons */
+.pricing-btn {
+  width: 100%;
+  padding: 12px 0;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  background: #001f3f;
+  color: white;
+  transition: 0.2s;
+}
+
+.pricing-btn:hover {
+  opacity: 0.9;
+}
+
+/* Pro Card Special Styling */
+.pro {
+  border: 2px solid #001f3f;
+  background: #001f3f10;
+}
+
+.pro-btn {
+  background: #001f3f;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+}

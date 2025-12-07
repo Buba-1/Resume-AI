@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import "./Slider.css";
+import "./slider.module.css";
 import img1 from '../../assets/images/resume1.webp';
 import img2 from "../../assets/images/resume2.png";
 import img3 from "../../assets/images/resume3.jpg";

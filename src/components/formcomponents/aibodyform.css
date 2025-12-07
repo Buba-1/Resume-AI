@@ -1,88 +1,190 @@
+/* Navy Color Palette: */
+/* Primary: #000080 (Navy) */
+/* Light Primary: #333399 (Slightly lighter navy) */
+/* Background: #f4f7f6 (Very light gray/off-white) */
+/* Accent/Button Hover: #0056b3 (A standard darker blue) */
+/* Success/Complete Button: #28a745 (Standard clean green) */
+/* Text/Border: #4a4a4a (Dark gray for contrast) */
+
+/* General Body Styling for consistency */
+body {
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Base Editor Container Styles (Mobile First) */
 .editor-container {
-  max-width: 600px;
-  margin: 20px auto;
-  padding: 16px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-family: Arial, sans-serif;
+    width: 90%; /* Occupy most of the mobile screen */
+    max-width: 650px; /* Comfortable width for a complex editor */
+    margin: 20px auto;
+    padding: 20px;
+    border: none;
+    border-radius: 12px;
+    background-color: white; /* White card background */
+    box-shadow: 0 4px 15px rgba(0, 0, 128, 0.1); /* Subtle navy shadow */
+    transition: all 0.3s ease;
 }
 
+/* Heading Styling */
 .editor-container h2 {
-  text-align: center;
-  margin-bottom: 16px;
+    text-align: center;
+    margin-bottom: 24px;
+    color: #000080; /* Navy heading color */
+    font-size: 1.8em;
+    font-weight: 600;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e0e0e0;
 }
 
+/* Individual Section Card Styling */
 .editor-card {
-  background: #f9f9f9;
-  border: 1px solid #ddd;
-  padding: 12px;
-  border-radius: 6px;
-  margin-bottom: 16px;
+    background: #fcfcfc; /* Very light background for the card */
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s ease;
 }
 
+.editor-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 128, 0.05);
+}
+
+/* Input and Textarea Styling */
 .editor-card input,
 .editor-card textarea {
-  width: 100%;
-  padding: 10px;
-  margin: 6px 0;
-  border: 1px solid #aaa;
-  border-radius: 4px;
-  font-size: 14px;
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #c0c0c0;
+    border-radius: 6px;
+    font-size: 1em;
+    color: #4a4a4a;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .editor-card textarea {
-  min-height: 80px;
-  resize: vertical;
+    min-height: 100px; /* Slightly taller default height */
+    resize: vertical;
+}
+
+/* Focus State for Input Fields */
+.editor-card input:focus,
+.editor-card textarea:focus {
+    border-color: #333399; /* Light navy border on focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(51, 51, 153, 0.3);
+}
+
+/* Bullet Points Section */
+.bullets-container {
+    padding: 10px;
+    border-top: 1px solid #f0f0f0;
+    margin-top: 15px;
 }
 
 .bullets-container label {
-  font-weight: bold;
-  display: block;
-  margin-top: 8px;
+    font-weight: 600;
+    color: #000080; /* Navy color for the label */
+    display: block;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    font-size: 1.05em;
 }
 
+/* Bullet Point Input Styling (similar to main inputs) */
+.bullets-container input {
+    margin: 5px 0;
+}
+
+/* Bullet Button Styling (Add Bullet Point) */
 .bullet-btn {
-  margin-top: 8px;
-  background-color: #007bff;
-  color: white;
-  padding: 8px 12px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+    margin-top: 10px;
+    background-color: #333399; /* Light Primary Navy for 'Add Bullet' */
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.1s;
 }
 
 .bullet-btn:hover {
-  background-color: #0056b3;
+    background-color: #000080; /* Primary Navy on hover */
+    transform: translateY(-1px);
 }
 
+/* Action Buttons Container (Add Section, Complete) */
 .editor-actions {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
+    display: flex;
+    /* Use flex-wrap for responsiveness on small screens */
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    margin-top: 25px;
 }
 
 .editor-actions button {
-  flex: 1;
-  margin: 0 6px;
-  padding: 10px;
-  border: none;
-  border-radius: 4px;
-  color: white;
-  cursor: pointer;
+    /* Base style for all action buttons */
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    margin: 5px; /* Add margin for spacing when wrapping */
+    flex-grow: 1; /* Allow buttons to grow */
+    transition: background-color 0.3s ease, transform 0.1s;
 }
 
+/* Style for 'Add New Section' Button (first child) */
 .editor-actions button:first-child {
-  background-color: #007bff;
+    background-color: #333399; /* Light Primary Navy */
 }
 
 .editor-actions button:first-child:hover {
-  background-color: #0056b3;
+    background-color: #000080; /* Primary Navy on hover */
+    transform: translateY(-1px);
 }
 
+/* Style for 'Complete' Button */
 .complete-btn {
-  background-color: green !important;
+    background-color: #28a745 !important; /* Standard Green for success/completion */
 }
 
 .complete-btn:hover {
-  background-color: darkgreen !important;
+    background-color: #1e7e34 !important; /* Darker green on hover */
+    transform: translateY(-1px);
+}
+
+/* --- Media Queries for Responsiveness --- */
+
+/* Tablet and larger screens (e.g., width > 600px) */
+@media (min-width: 600px) {
+    .editor-container {
+        max-width: 800px; 
+        padding: 30px;
+    }
+    
+    /* Ensure the action buttons are neatly spaced on wider screens */
+    .editor-actions {
+        flex-wrap: nowrap;
+        justify-content: flex-end; /* Align buttons to the right */
+    }
+
+    .editor-actions button {
+        max-width: 200px; /* Limit button width */
+        margin-left: 15px;
+        flex-grow: 0; /* Prevent buttons from stretching excessively */
+    }
+
+    .editor-actions button:first-child {
+        margin-right: auto; /* Push the 'Add New Section' button to the left */
+        margin-left: 0;
+    }
 }

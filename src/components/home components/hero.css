@@ -1,6 +1,6 @@
 .heroview {
   width: 100%;
-   background: white;
+  background: white;
   box-shadow: 0 0 40px 0px rgba(255, 255, 255, 0.8);
   display: flex;
   flex-direction: column;
@@ -9,80 +9,74 @@
   padding-top: 30px;
   padding-bottom: 50px;
 }
+
 .herocontainer {
   width: 80%;
+  max-width: 1200px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0px;
 }
-.hookdiv {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0px;
-  text-align: center;
-  margin: 20px;
-}
+
 .intro {
   font-size: 68px;
   font-weight: bold;
   margin-bottom: 40px;
   text-align: center;
-  color: rgba(0, 0, 60, 0.7); 
-  font-family:'Times New Roman', Times, serif;
+  color: rgba(0, 0, 60, 0.7);
+  font-family: "Times New Roman", Times, serif;
 }
+
+.hookdiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 20px;
+}
+
 .hook {
   font-size: 24px;
-  font-family:'Times New Roman', Times, serif ;
+  font-family: "Times New Roman", Times, serif;
   text-align: center;
-  max-width: 100%;
-  color: grey; 
+  color: grey;
   margin: 0px;
   padding: 0px;
   line-height: 1.4;
 }
+
 .hook1 {
   font-size: 18px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   text-align: center;
-  max-width: 100%;
-  color: grey; 
+  color: grey;
   margin: 15px;
-  line-height:1.4;
+  line-height: 1.4;
 }
-
 
 .span1 {
-  
-  background-color: rgba(0, 0, 128, 0.555);   /* blue background */
+  background-color: rgba(0, 0, 128, 0.555);
   color: whitesmoke;
-  padding: 10px 22px;           /* needed to see shape */
-  border-radius: 50px;         /* rounded corners */
-  display: inline-block;       /* required */
-
+  padding: 10px 22px;
+  border-radius: 50px;
+  display: inline-block;
 }
+
 .span2 {
- background-color: rgba(0, 0, 128, 0.555);   /* blue background */
+  background-color: rgba(0, 0, 128, 0.555);
   color: whitesmoke;
-  padding: 3px 22px;           /* needed to see shape */
-  border-radius: 50px;         /* rounded corners */
-  display: inline-block;     
+  padding: 3px 22px;
+  border-radius: 50px;
+  display: inline-block;
 }
-
-
-
-
-
-
 
 .getstartedbtn {
   margin-top: 20px;
   padding: 10px 40px;
   font-size: 18px;
-  color: #4E1F8C;
+  color: #4e1f8c;
   background-color: white;
   border: none;
   border-radius: 22px;
@@ -90,11 +84,125 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s, color 0.3s;
 }
+
 .btntxt {
   font-weight: bold;
 }
 
-/* 
-linear-gradient(to bottom,#4E1F8C, #A36FF3)
+/* ----------------------------------------------------
+   RESPONSIVE BREAKPOINTS
+---------------------------------------------------- */
 
-*/
+/* Large laptops (below 1200px) */
+@media (max-width: 1200px) {
+  .intro {
+    font-size: 56px;
+  }
+  .hook {
+    font-size: 22px;
+  }
+}
+
+/* Tablets (below 992px) */
+@media (max-width: 992px) {
+  .herocontainer {
+    width: 90%;
+  }
+
+  .intro {
+    font-size: 48px;
+  }
+
+  .hook {
+    font-size: 20px;
+  }
+
+  .hook1 {
+    font-size: 17px;
+    max-width: 90%;
+  }
+
+  .getstartedbtn {
+    padding: 10px 30px;
+    font-size: 16px;
+  }
+}
+
+
+
+
+/* Small tablets / large phones (below 768px) */
+@media (max-width: 768px) {
+  .intro {
+    font-size: 38px;
+    margin-bottom: 25px;
+  }
+
+  .hook {
+    font-size: 18px;
+  }
+
+  .hook1 {
+    font-size: 16px;
+  }
+
+  .span1,
+  .span2 {
+    padding: 6px 16px;
+  }
+
+  .getstartedbtn {
+    padding: 8px 26px;
+    font-size: 15px;
+  }
+
+  .herocontainer > div[style] {
+    flex-direction: column;
+    gap: 10px;
+    width: 98%;
+  }
+}
+
+
+
+/* Mobile phones (below 480px) */
+@media (max-width: 480px) {
+  .heroview {
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+
+  .herocontainer > div[style] {
+    flex-direction: column;
+    gap: 10px;
+    width: 98%;
+  }
+
+  .intro {
+    font-size: 32px;
+  }
+
+  .hook {
+    font-size: 16px;
+  }
+
+  .hook1 {
+    font-size: 14px;
+    margin: 10px;
+  }
+
+  .span1 {
+    padding: 6px 14px;
+    font-size: 14px;
+  }
+
+  .span2 {
+    padding: 4px 12px;
+    font-size: 13px;
+  }
+
+  .getstartedbtn {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+}

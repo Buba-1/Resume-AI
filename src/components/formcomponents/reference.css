@@ -1,50 +1,169 @@
+/* General Body Styling for consistency and centering (assuming it's used with the previous form) */
+body {
+  background-color: #f4f7f6; /* Very light gray/off-white background */
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Base Form Container Styles (Mobile First) */
 .references-container {
-  margin: 20px;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  background: #fafafa;
+  width: 90%; /* Occupy most of the mobile screen */
+  max-width: 700px; /* Wider max-width for the repeating reference blocks */
+  margin: 20px auto;
+  padding: 20px;
+  border: none;
+  border-radius: 12px;
+  background-color: white; /* White card background */
+  box-shadow: 0 4px 15px rgba(0, 0, 128, 0.1); /* Subtle navy shadow */
+  transition: all 0.3s ease;
 }
 
+/* Heading Styling */
+.references-container h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #000080; /* Navy heading color */
+  font-size: 1.8em;
+  font-weight: 600;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+/* Individual Reference Block Styling */
 .reference-block {
-  margin-bottom: 20px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  background: #fff;
+  margin-bottom: 25px;
+  padding: 15px;
+  border: 1px solid #d0d0d0; /* Light border to separate blocks */
+  border-radius: 8px;
+  background: #ffffff;
+  transition: box-shadow 0.3s ease;
 }
 
+/* Hover effect on reference blocks for better UX */
+.reference-block:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 128, 0.05);
+}
+
+/* Input and Textarea Styling */
 .reference-block input,
 .reference-block textarea {
   display: block;
   width: 100%;
-  margin: 6px 0;
-  padding: 8px;
-  border: 1px solid #aaa;
-  border-radius: 4px;
+  margin: 10px 0; /* Increased margin for better spacing */
+  padding: 12px;
+  border: 1px solid #c0c0c0;
+  border-radius: 6px;
+  font-size: 1em;
+  color: #4a4a4a;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  resize: vertical; /* Allow vertical resizing for textarea */
+  min-height: 40px;
 }
 
-button {
-  margin-top: 8px;
-  padding: 8px 12px;
+/* Textarea specific height */
+.reference-block textarea {
+  min-height: 80px;
+}
+
+/* Focus State for Input Fields */
+.reference-block input:focus,
+.reference-block textarea:focus {
+  border-color: #333399; /* Light navy border on focus */
+  outline: none;
+  box-shadow: 0 0 5px rgba(51, 51, 153, 0.3); /* Subtle navy glow */
+}
+
+/* Base Button Styling */
+.references-container button {
+  padding: 10px 18px;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
+  font-size: 1em;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.1s;
+  text-transform: uppercase;
 }
 
+/* --- Specific Button Styles (Using Navy Palette) --- */
+
+/* Add Reference Button */
 .add-btn {
-  background-color: #4caf50;
+  background-color: #333399; /* Light Primary Navy for 'Add' */
   color: white;
+  margin-right: 15px; /* Spacing between add and complete */
+  margin-top: 20px;
 }
 
+.add-btn:hover {
+  background-color: #000080; /* Primary Navy on hover */
+  transform: translateY(-1px);
+}
+
+/* Complete Button */
 .complete-btn {
-  background-color: #2196f3;
+  background-color: #000080; /* Primary Navy for 'Complete' */
   color: white;
-  margin-left: 10px;
+  margin-left: 0; /* Remove the old margin-left */
+  margin-top: 20px;
 }
 
+.complete-btn:hover {
+  background-color: #0056b3; /* Accent/Darker blue on hover */
+  transform: translateY(-1px);
+}
+
+/* Delete Reference Button */
 .delete-btn {
-  background-color: #f44336;
+  width: 100%; /* Make delete button full width within its block */
+  background-color: #e85d04; /* A contrasting modern orange/red for danger */
   color: white;
-  margin-top: 10px;
+  margin-top: 15px;
+  font-size: 0.9em;
+  padding: 8px;
+  letter-spacing: 0.5px;
+}
+
+.delete-btn:hover {
+  background-color: #c94a00;
+}
+
+/* --- Media Queries for Responsiveness --- */
+
+/* Tablet and larger screens (e.g., width > 600px) */
+@media (min-width: 600px) {
+  .references-container {
+    max-width: 800px; /* Increase size for tablet/desktop */
+    padding: 30px;
+  }
+
+  .references-container h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+
+  .reference-block {
+    padding: 20px;
+  }
+
+  /* Keep the main action buttons inline */
+  .add-btn,
+  .complete-btn {
+    margin-top: 25px;
+  }
+
+  /* Restrict delete button width on larger screens to keep it consistent */
+  .delete-btn {
+    width: auto;
+    float: right; /* Float to the right of the block */
+    margin-top: 5px; /* Adjust top margin for better alignment */
+  }
+
+  .reference-block::after {
+    content: "";
+    display: table;
+    clear: both; /* Clear the float */
+  }
 }

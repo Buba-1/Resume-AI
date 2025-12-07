@@ -1,37 +1,146 @@
+/* ===============================
+   BASE STYLES (Desktop default)
+================================ */
+.parent {
+  width: 100%;
+  background-color: blueviolet;
+}
 .container {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  width: 80%;
-  padding-bottom: 20px;
-  padding-top: 20px;;
+  width: 100%;
+  background-color: bisque;
+  flex-wrap: wrap;
 }
+
 .row {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: aqua;
 }
+
 .title0 {
-  font-size:45px;
+  font-size: 45px;
   font-weight: bold;
   color: navy;
   margin: 5px 0;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 .title1 {
-  font-size:20px;
+  font-size: 20px;
   font-weight: 600;
   color: black;
   margin: 2px 0;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 .title2 {
-  font-size:26px;
+  font-size: 26px;
   font-weight: 400;
   color: gray;
   margin: 2px 0;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+/* Provided in JSX */
+.slider-container {
+  padding-top: 0px;
+  padding-bottom: 5px;
+}
+.slider-image {
+  height: 300px;
+  margin-right: 20px;
+}
+
+/* ===============================
+   LAPTOP (below 1200px)
+================================ */
+@media (max-width: 1200px) {
+  .title0 {
+    font-size: 38px;
+  }
+  .title2 {
+    font-size: 22px;
+  }
+  .slider-image {
+    height: 260px;
+  }
+}
+
+/* ===============================
+   TABLETS (below 992px)
+================================ */
+@media (max-width: 992px) {
+  .container {
+    width: 90%;
+  }
+
+  .title0 {
+    font-size: 34px;
+  }
+  .title1 {
+    font-size: 18px;
+  }
+  .title2 {
+    font-size: 20px;
+  }
+
+  .slider-image {
+    height: 230px;
+    margin-right: 10px;
+  }
+}
+
+/* ===============================
+   SMALL TABLETS & LARGE PHONES (below 768px)
+================================ */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .title0 {
+    font-size: 30px;
+  }
+  .title1 {
+    font-size: 17px;
+  }
+  .title2 {
+    font-size: 18px;
+  }
+
+  .slider-image {
+    height: 200px;
+    margin-right: 0;
+  }
+}
+
+/* ===============================
+   MOBILE PHONES (below 480px)
+================================ */
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+    width: 95%;
+  }
+
+  .title0 {
+    font-size: 26px;
+  }
+  .title1 {
+    font-size: 16px;
+  }
+  .title2 {
+    font-size: 16px;
+  }
+
+  .slider-image {
+    height: 160px;
+  }
 }

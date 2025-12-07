@@ -1,38 +1,118 @@
-.form-container {
-  max-width: 400px;
-  margin: 20px auto;
-  padding: 16px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-family: Arial, sans-serif;
+/* Navy Color Palette: */
+/* Primary: #000080 (Navy) */
+/* Light Primary: #333399 (Slightly lighter navy) */
+/* Background: #f4f7f6 (Very light gray/off-white) */
+/* Accent/Button Hover: #0056b3 (A standard darker blue) */
+/* Text/Border: #4a4a4a (Dark gray for contrast) */
+
+/* General Body Styling for a clean look */
+body {
+  background-color: #f4f7f6; /* Light background */
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex; /* Helps center the form if no other content is present */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
+/* Base Form Container Styles (Mobile First) */
+.form-container {
+  width: 90%; /* Occupy most of the mobile screen */
+  max-width: 350px; /* Max width for smaller screens */
+  margin: 20px auto;
+  padding: 20px;
+  border: none; /* Removing harsh border */
+  border-radius: 12px; /* Smoother corners */
+  background-color: white; /* White card background */
+  box-shadow: 0 4px 15px rgba(0, 0, 128, 0.1); /* Subtle shadow using navy tint */
+  transition: all 0.3s ease; /* Smooth transitions for hover effects */
+}
+
+/* Heading Styling */
 .form-container h2 {
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
+  color: #000080; /* Navy heading color */
+  font-size: 1.8em;
+  font-weight: 600;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e0e0e0; /* Light separator line */
 }
 
+/* Input Field Styling */
 .form-container input {
-  width: 100%;
+  width: calc(100% - 20px); /* Adjusting for padding */
   padding: 10px;
-  margin: 8px 0;
-  border: 1px solid #aaa;
-  border-radius: 4px;
-  font-size: 14px;
+  margin: 12px 0;
+  border: 1px solid #c0c0c0; /* Lighter border for clean look */
+  border-radius: 6px;
+  font-size: 1em;
+  color: #4a4a4a;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
+/* Focus State for Input Fields */
+.form-container input:focus {
+  border-color: #333399; /* Light navy border on focus */
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 5px rgba(51, 51, 153, 0.5); /* Subtle navy glow */
+}
+
+/* Button Styling */
 .form-container button {
   width: 100%;
-  padding: 10px;
-  margin-top: 12px;
-  background-color: #007bff;
+  padding: 12px;
+  margin-top: 20px;
+  background-color: #000080; /* Primary Navy button color */
   color: white;
   border: none;
-  font-size: 15px;
-  border-radius: 4px;
+  font-size: 1.1em;
+  font-weight: 500;
+  border-radius: 6px;
   cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s ease, transform 0.1s;
 }
 
+/* Button Hover State */
 .form-container button:hover {
-  background-color: #0056b3;
+  background-color: #0056b3; /* Darker blue on hover for clear feedback */
+  transform: translateY(-1px); /* Slight lift effect */
+}
+
+/* Button Active/Click State */
+.form-container button:active {
+  transform: translateY(0);
+}
+
+/* --- Media Queries for Responsiveness --- */
+
+/* Tablet and larger screens (e.g., width > 600px) */
+@media (min-width: 600px) {
+  .form-container {
+    max-width: 450px; /* Increase size for tablet */
+    padding: 30px;
+  }
+
+  .form-container h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+
+  .form-container input {
+    padding: 12px;
+    margin: 15px 0;
+  }
+}
+
+/* Laptop and larger screens (e.g., width > 992px) */
+@media (min-width: 992px) {
+  .form-container {
+    max-width: 500px; /* Max size for standard laptop view */
+    /* Center the form on very large screens, though 'margin: auto' often handles this */
+    margin: 40px auto;
+  }
 }

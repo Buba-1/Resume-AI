@@ -1,38 +1,163 @@
-.window-container{
-  display: flex;
-  flex-direction: column;
-  padding:20px;
-  padding-bottom:130px;
-  align-items: center;
-  width: 100%;
+/* Navy Color Palette: */
+/* Primary: #000080 (Navy) */
+/* Light Primary: #333399 (Slightly lighter navy) */
+/* Background: #f4f7f6 (Very light gray/off-white) */
+/* Accent/Button Hover: #0056b3 (A standard darker blue) */
+/* Success/Answered: #28a745 (Standard clean green) */
+/* Text/Border: #4a4a4a (Dark gray for contrast) */
+
+/* General Body Styling for consistency */
+body {
+  background-color: #f4f7f6;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Base Window Container (Mobile First) */
+.window-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px; /* Reduced padding for mobile */
+  /* Remove padding-bottom: 130px and let the margin handle spacing */
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* List Container (Flex wrapper for items) */
 .list-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
-  padding: 16px;
+  gap: 15px; /* Consistent spacing */
+  padding: 10px;
+  width: 100%; /* Ensure it takes full width of the container */
+  max-width: 1200px; /* Set a max width for large screens */
+  box-sizing: border-box;
 }
 
-.list-item.answered {
-  box-shadow: 0 0 5px 2px green; /* Green shadow for answered questions */
-}
-
+/* Individual Question Card (Mobile Default) */
 .list-item {
-  width: 48%;
-  padding: 16px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  width: 100%; /* Full width on small screens */
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px; /* Modern rounded corners */
+  background-color: white;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  transition: all 0.3s ease;
 }
 
+/* Styles for Answered Questions (Success state) */
+.list-item.answered {
+  /* Use a very light green border/shadow for a cleaner look */
+  border: 1px solid #28a745;
+  box-shadow: 0 0 8px rgba(40, 167, 69, 0.2);
+}
+
+/* Styles for Active/Selected Question */
 .list-item.active {
-  border: 3px solid green;
+  /* Stronger visual cue for the active question */
+  border: 3px solid #333399; /* Light Primary Navy border */
+  box-shadow: 0 0 10px rgba(51, 51, 153, 0.4);
 }
 
-.button-group {
+/* Question Title Styling */
+.list-item h3 {
+  margin: 0;
+  color: #000080; /* Navy Title */
+  font-size: 1.2em;
+}
+
+/* Question Instruction Text */
+.list-item p {
+  margin: 0;
+  color: #4a4a4a;
+  font-size: 0.95em;
+  line-height: 1.4;
+  flex-grow: 1; /* Allows the description to take up space */
+}
+
+/* Status Text */
+.list-item small {
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+
+/* Mic Button Styling */
+.button-group button {
+  background-color: #333399; /* Light Primary Navy */
+  color: white;
+  border: none;
+  border-radius: 50%; /* Circular button */
+  width: 40px;
+  height: 40px;
   display: flex;
-  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.button-group button:hover {
+  background-color: #000080; /* Primary Navy on hover */
+  transform: scale(1.05);
+}
+
+/* Submit Button at the Bottom (Global Action) */
+.window-container > div:last-child {
+  width: 90%;
+  max-width: 400px;
+  margin-top: 25px; /* Add margin here instead of inline style */
+  margin-bottom: 20px;
+}
+
+.window-container .btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #000080; /* Primary Navy */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, transform 0.1s;
+}
+
+.window-container .btn:hover {
+  background-color: #0056b3; /* Accent/Darker blue on hover */
+  transform: translateY(-1px);
+}
+
+/* --- Media Queries for Responsiveness --- */
+
+/* Tablet Screens (e.g., width > 600px) */
+@media (min-width: 600px) {
+  .list-item {
+    width: calc(50% - 15px); /* Two items per row with gap */
+  }
+}
+
+/* Desktop/Laptop Screens (e.g., width > 992px) */
+@media (min-width: 992px) {
+  .list-container {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .list-item {
+    width: calc(33.333% - 14px); /* Three items per row with gap */
+    padding: 25px;
+  }
+
+  .window-container > div:last-child {
+    margin-top: 35px;
+    max-width: 450px;
+  }
 }

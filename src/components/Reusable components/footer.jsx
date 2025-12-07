@@ -54,7 +54,10 @@ export default function Footer() {
               <Link to={"/login"}>login</Link>
             </li>
             <li>
-              <Link to={"/create-account"}>Create Account</Link>
+              <Link to={"/create_account"}>Create Account</Link>
+            </li>
+            <li>
+              <Link to={"/registeration_successful"}>regis succs</Link>
             </li>
           </ul>
         </div>

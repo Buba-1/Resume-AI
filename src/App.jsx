@@ -8,16 +8,18 @@ import Manualresumepage from "../src/pagesfolder/manualresumepage";
 import Resumerecordingpage from "../src/pagesfolder/resumerecordingpage";
 import Resumebuilderpage from "../src/pagesfolder/resumebuilderpage";
 import Resumeretouchpage from "../src/pagesfolder/resumeretouchpage";
-import Navbar from "./components/Reusable components/navbar"; 
+import Navbar from "./components/Reusable components/navbar";
 import PrivacyPolicy from "./pagesfolder/privacypolicy";
 import TermsOfService from "./pagesfolder/termsofservice";
 import CookiePolicy from "./pagesfolder/cookiepolicy";
-import UserGuide from "./pagesfolder/userguide";  
+import UserGuide from "./pagesfolder/userguide";
 import LoginPage from "./pagesfolder/login";
 import CreateAccount from "./pagesfolder/createaccount";
 import HowToUse from "./pagesfolder/howtouse";
 import MyProfile from "./pagesfolder/myprofile";
 import Footer from "./components/Reusable components/footer";
+import RegistrationSuccess from "./pagesfolder/successfullregistration";
+import Templates from "./pagesfolder/templates";
 
 function App() {
   return (
@@ -37,9 +39,14 @@ function App() {
         <Route path="/cookie-policy" element={<CookiePolicy />} />
         <Route path="/user-guide" element={<UserGuide />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/create-account" element={<CreateAccount />} />
+        <Route path="/create_account" element={<CreateAccount />} />
         <Route path="/how_to_use" element={<HowToUse />} />
         <Route path="/my_profile" element={<MyProfile />} />
+        <Route
+          path="/registeration_successful"
+          element={<RegistrationSuccess />}
+        />
+        <Route path="/templates" element={<Templates />} />
       </Routes>
       <Footer />
     </div>

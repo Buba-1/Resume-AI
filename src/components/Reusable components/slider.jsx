@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
-import "./slider.module.css";
-import img1 from '../../assets/images/resume1.webp';
+import styles from "./slider.module.css";
+import img1 from "../../assets/images/resume1.webp";
 import img2 from "../../assets/images/resume2.png";
 import img3 from "../../assets/images/resume3.jpg";
 import img4 from "../../assets/images/resume4.webp";
@@ -10,9 +10,7 @@ import img7 from "../../assets/images/resume7.jpg";
 import img8 from "../../assets/images/resume8.png";
 import img9 from "../../assets/images/resume9.png";
 
-const images = [
-    img1,img2,img3,img4,img5,img6,img7,img8,img9
-];
+const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
 
 function Slider() {
   const sliderRef = useRef(null);
@@ -35,14 +33,14 @@ function Slider() {
   }, []);
 
   return (
-    <div className="slider-container" ref={sliderRef}>
-      <div className="slider-track">
+    <div className={styles.slidercontainer} ref={sliderRef}>
+      <div className={styles.slidertrack}>
         {images.concat(images).map((src, index) => (
           <img
             key={index}
             src={src}
             alt={`Slide ${index}`}
-            className="slider-image"
+            className={styles.sliderimage}
           />
         ))}
       </div>

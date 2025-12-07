@@ -1,4 +1,4 @@
-.slider-container {
+.slidercontainer {
   overflow-x: hidden;
   white-space: nowrap;
   width: 100%;
@@ -8,19 +8,16 @@
   padding-bottom: 20px;
 }
 
-.slider-track {
+.slidertrack {
   display: flex;
   width: max-content;
   margin-top: 30px;
   margin-bottom: 30px;
 }
 
-.slider-image {
-
+.sliderimage {
   height: 500px;
   object-fit: cover;
   margin-right: 30px;
- box-shadow: 
-  0 0 10px rgba(255, 255, 255, 0.8);
-
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }

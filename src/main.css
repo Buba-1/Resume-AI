@@ -1,6 +1,141 @@
-/* Reset default margin and padding */
-* {
+/* =================================================== */
+/* GLOBAL FOUNDATION STYLES (index.css)                */
+/* =================================================== */
+
+:root {
+  /* --------------------------------------------------- */
+  /* 1. TYPOGRAPHY & FONT VARIABLES                      */
+  /* --------------------------------------------------- */
+  --font-body: "Inter", sans-serif;
+  --font-heading: "Montserrat", sans-serif;
+
+  /* --------------------------------------------------- */
+  /* 2. COLOR PALETTE VARIABLES                          */
+  /* --------------------------------------------------- */
+  /* Brand & Accent Colors */
+  --color-brand-navy: #000080; /* Primary Navy Blue */
+  --color-brand-light: #0033cc; /* Lighter blue for links/actions */
+  --color-success: #28a745; /* Green for success messages */
+  --color-error: #dc3545; /* Red for errors/alerts */
+
+  /* Neutral & Text Colors */
+  --color-background: #ffffff; /* Pure white (Main background) */
+  --color-off-white: #f8f9fa; /* Very light gray (Cards/Sections) */
+  --color-border: #dddddd; /* Light gray for borders */
+  --color-text-dark: #333333; /* Main body text color (soft black) */
+  --color-text-light: #6c757d; /* Subtle text (captions, placeholders) */
+
+  /* --------------------------------------------------- */
+  /* 3. SPACING VARIABLES (For consistent padding/margins) */
+  /* --------------------------------------------------- */
+  --space-sm: 0.5rem; /* 8px */
+  --space-md: 1rem; /* 16px */
+  --space-lg: 1.5rem; /* 24px */
+  --space-xl: 2rem; /* 32px */
+}
+
+/* --------------------------------------------------- */
+/* 4. BASE STYLES & FONT APPLICATION (Mobile-First)    */
+/* --------------------------------------------------- */
+
+/* Reset Box Model and set default background/font */
+html,
+body {
+  box-sizing: border-box;
+  font-size: 16px;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-background);
+  font-family: var(--font-body);
+  color: var(--color-text-dark);
+  line-height: 1.6;
+  min-height: 100vh; /* Ensure full viewport height */
+}
+
+/* Headings: Apply Montserrat and Navy Color */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  color: var(--color-brand-navy);
+  line-height: 1.2;
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-md);
+}
+
+/* Base Heading Sizes (Mobile) */
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.5rem;
+}
+
+/* --------------------------------------------------- */
+/* 5. RESPONSIVE CONTAINER LOGIC                       */
+/* --------------------------------------------------- */
+
+/* Full-width wrapper for background color control */
+.app-wrapper {
+  width: 100%;
+}
+
+/* Constrained Content Container (Mobile Default) */
+.content-container {
+  width: 98%; /* 1% breathing room on each side */
+  margin: 0 auto; /* Center the container */
+  padding: var(--space-lg) 0; /* Vertical padding */
+  max-width: 1400px; /* Max width on ultra-wide screens */
+}
+
+/* --------------------------------------------------- */
+/* 6. RESPONSIVE MEDIA QUERIES                         */
+/* --------------------------------------------------- */
+
+/* === Tablet View (min-width: 768px) === */
+@media (min-width: 768px) {
+  /* Content Container adjustments */
+  .content-container {
+    width: 90%;
+    padding: var(--space-xl) 0; /* Increase vertical padding */
+  }
+
+  /* Typography adjustments (optional, but good for larger screens) */
+  body {
+    font-size: 17px;
+  }
+}
+
+/* === Laptop/Desktop View (min-width: 1024px) === */
+@media (min-width: 1024px) {
+  /* Content Container adjustments */
+  .content-container {
+    width: 80%; /* Shrink content area for focused reading */
+  }
+
+  /* Heading Size adjustments for large displays */
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+/* --------------------------------------------------- */
+/* 7. EXAMPLE COMPONENT STYLES (For reference)         */
+/* --------------------------------------------------- */
+
+.card {
+  background-color: var(--color-off-white);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: var(--space-lg);
+  margin-bottom: var(--space-xl);
 }

@@ -1,161 +1,205 @@
-/* --- Global Variables for Consistency --- */
-:root {
-  --color-primary: #007bff; /* A modern blue for links/accents */
-  --color-text: #333;
-  --color-light-gray: #f7f7f7; /* Background color for containers */
-  --color-border: #e0e0e0;
-  --color-shadow: rgba(0, 0, 0, 0.08);
-  --border-radius-base: 12px;
-  --spacing-unit: 1rem; /* 16px */
-}
+/* ============================================================
+   LOGIN PAGE — FULLY RESPONSIVE, MODERN, CLEAN, FLUID UI
+   Uses global variables from index.css
+   ============================================================ */
 
-/* --- Login Container & Layout --- */
+/* -------------------------------------- */
+/* 1. Layout Wrapper (Fluid + Centered)   */
+/* -------------------------------------- */
 .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Full viewport height */
-  background-color: var(--color-light-gray);
-  padding: var(--spacing-unit);
-  box-sizing: border-box; /* Include padding in element's total width and height */
+  min-height: 100vh;
+  background: var(--color-off-white);
+  padding: var(--space-lg);
 }
 
+/* -------------------------------------- */
+/* 2. Card — Fluid Width + Centered       */
+/* -------------------------------------- */
 .login-card {
-  background: white;
-  padding: 2.5rem; /* Larger, generous padding */
-  border-radius: var(--border-radius-base);
-  box-shadow: 0 10px 30px var(--color-shadow); /* Modern, soft shadow */
+  background: var(--color-background);
   width: 100%;
-  max-width: 400px; /* Constrain the card width */
+  max-width: 420px; /* prevents overly wide forms */
+  padding: var(--space-xl);
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
   display: flex;
   flex-direction: column;
-  gap: 1.5rem; /* Consistent spacing between major elements */
+  gap: var(--space-lg);
+
+  /* Responsive padding */
+  /* 16px - 40px fluid depending on screen size */
+  padding: clamp(1rem, 4vw, 2.5rem);
 }
 
+/* -------------------------------------- */
+/* 3. Typography — Fluid + Modern         */
+/* -------------------------------------- */
 .title {
   text-align: center;
-  margin-bottom: 0.5rem;
-  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+
+  /* Responsive heading scaling */
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
   font-weight: 700;
-  font-size: 2rem;
+  color: var(--color-brand-navy);
+  font-family: var(--font-heading);
 }
 
-/* --- Form and Inputs --- */
+/* -------------------------------------- */
+/* 4. Form & Inputs                       */
+/* -------------------------------------- */
 .login-form {
   display: flex;
   flex-direction: column;
-  gap: 1rem; /* Spacing between form elements */
+  gap: var(--space-md);
 }
 
 .input {
   width: 100%;
-  padding: 1rem 1.25rem;
+  box-sizing: border-box; /* KEY FIX → prevents overflow */
+
+  padding: 0.85rem 1rem; /* Solid, mobile-safe padding */
+  /* If you want fluid scale: padding: clamp(0.75rem, 2.5vw, 1rem); */
+
   border: 1px solid var(--color-border);
-  border-radius: var(--border-radius-base);
-  font-size: 1rem;
+  border-radius: 8px;
+
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .input:focus {
   outline: none;
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Focus ring */
+  border-color: var(--color-brand-light);
+  box-shadow: 0 0 0 3px rgba(0, 51, 204, 0.15);
 }
 
-/* --- Agreement Checkbox --- */
+/* -------------------------------------- */
+/* 5. Agreement / Checkbox                */
+/* -------------------------------------- */
 .agreement {
   display: flex;
-  align-items: center;
-  font-size: 0.875rem; /* Smaller font for secondary info */
-  color: var(--color-text);
+  align-items: flex-start;
+  font-size: clamp(0.8rem, 1.1vw, 0.95rem);
+  color: var(--color-text-light);
+  line-height: 1.4;
 }
 
 .agreement input[type="checkbox"] {
-  margin-right: 0.5rem;
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
+  margin-right: var(--space-sm);
+  accent-color: var(--color-brand-navy);
 }
 
-.agreement label {
-  cursor: pointer;
-  line-height: 1.5; /* Better readability */
+/* Links inside text */
+.link,
+.link-large {
+  font-weight: 600;
+  color: var(--color-brand-navy);
+  text-decoration: none;
+  transition: color 0.2s;
 }
 
-/* --- Buttons --- */
+.link:hover,
+.link-large:hover {
+  color: var(--color-brand-light);
+  text-decoration: underline;
+}
+
+/* -------------------------------------- */
+/* 6. Buttons — Fluid Padding + Clean     */
+/* -------------------------------------- */
 .btn-primary {
   width: 100%;
-  padding: 1rem;
-  background: black;
-  color: white;
-  border-radius: var(--border-radius-base);
+
+  padding: clamp(0.8rem, 2vw, 1rem);
+
+  background: var(--color-brand-navy);
+  color: var(--color-background);
   border: none;
-  cursor: pointer;
-  font-size: 1rem;
+  border-radius: 8px;
+
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
   font-weight: 600;
-  transition: background-color 0.2s, transform 0.1s;
+
+  transition: background-color 0.2s, transform 0.2s;
 }
 
-.btn-primary:hover {
-  background-color: #333; /* Slightly darker on hover */
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--color-brand-light);
 }
 
 .btn-primary:active {
-  transform: scale(0.99); /* Minimal press effect */
+  transform: scale(0.98);
 }
 
+.btn-primary:disabled {
+  background-color: var(--color-text-light);
+  cursor: not-allowed;
+}
+
+/* Google Btn */
 .btn-google {
   width: 100%;
-  padding: 1rem;
-  background: white;
+  padding: clamp(0.8rem, 2vw, 1rem);
+
+  background: var(--color-background);
   border: 1px solid var(--color-border);
-  border-radius: var(--border-radius-base);
-  cursor: pointer;
-  font-size: 1rem;
+  border-radius: 8px;
+
+  font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+  color: var(--color-text-dark);
   font-weight: 500;
-  color: var(--color-text);
-  transition: background-color 0.2s;
-  /* Add spacing below the form, before the Google button */
-  margin-top: 0.5rem; 
+
+  transition: background-color 0.2s, border-color 0.2s;
 }
 
 .btn-google:hover {
-  background: var(--color-light-gray);
+  background: var(--color-off-white);
+  border-color: var(--color-brand-light);
 }
 
-/* --- Bottom Links --- */
-.forgot,
-.create-account {
-  text-align: center;
-  font-size: 0.9375rem; /* 15px */
-}
-
+/* -------------------------------------- */
+/* 7. Bottom Links                        */
+/* -------------------------------------- */
 .forgot {
-  color: var(--color-text);
-  text-decoration: none; /* Minimalist: remove default underline */
-  margin-bottom: 0.5rem;
+  text-align: center;
+  margin-top: var(--space-sm);
+
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  color: var(--color-text-light);
+
+  text-decoration: none;
   transition: color 0.2s;
 }
 
 .forgot:hover {
-  color: var(--color-primary);
+  color: var(--color-brand-navy);
 }
 
 .create-account {
   display: flex;
   justify-content: center;
-  gap: 0.375rem; /* 6px */
-  margin-top: 1rem; /* Space it out from the forgot password link */
+  gap: var(--space-sm);
+
+  font-size: clamp(0.9rem, 1.3vw, 1.05rem);
+  margin-top: var(--space-md);
 }
 
-.link,
-.link-large {
-  font-weight: 600;
-  color: var(--color-primary);
-  text-decoration: none;
-  transition: text-decoration 0.2s;
-}
-
-.link:hover,
-.link-large:hover {
-  text-decoration: underline; /* Underline on hover for clarity */
+/* -------------------------------------- */
+/* 8. Tablet & Desktop Tweaks             */
+/* -------------------------------------- */
+@media (min-width: 768px) {
+  .login-card {
+    max-width: 480px;
+    padding: clamp(2rem, 3vw, 3rem);
+  }
 }

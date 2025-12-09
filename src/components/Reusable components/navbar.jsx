@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./navbar.css";
+import styles from "./navbar.module.css";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -8,10 +8,10 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="navbar">
-      {/* DESKTOP WINDOW */}
-      <div className="nav-window-desktop">
-        <ul className="nav-links-desktop">
+    <nav className={styles.navbar}>
+      {/* DESKTOP WINDOW (No changes needed here) */}
+      <div className={styles["nav-window-desktop"]}>
+        <ul className={styles["nav-links-desktop"]}>
           <Link to="/">
             <li>Home</li>
           </Link>
@@ -37,35 +37,41 @@ const Navbar = () => {
       </div>
 
       {/* MOBILE/TABLET WINDOW */}
-      <div className="nav-window-mobile">
-        <div className="hamburger" onClick={toggleMenu}>
-          <div className={`bar ${isOpen ? "rotate1" : ""}`}></div>
-          <div className={`bar ${isOpen ? "fade" : ""}`}></div>
-          <div className={`bar ${isOpen ? "rotate2" : ""}`}></div>
+      <div className={styles["nav-window-mobile"]}>
+        <div className={styles.hamburger} onClick={toggleMenu}>
+          <div
+            className={`${styles.bar} ${isOpen ? styles.rotate1 : ""}`}
+          ></div>
+          <div className={`${styles.bar} ${isOpen ? styles.fade : ""}`}></div>
+          <div
+            className={`${styles.bar} ${isOpen ? styles.rotate2 : ""}`}
+          ></div>
         </div>
 
-        {/* MOBILE MENU (Animated) */}
-        <div className={`mobile-menu ${isOpen ? "open" : ""}`}>
+        {/* MOBILE MENU (Fixed: added onClick={toggleMenu} to each Link) */}
+        <div
+          className={`${styles["mobile-menu"]} ${isOpen ? styles.open : ""}`}
+        >
           <ul>
-            <Link to="/">
+            <Link to="/" onClick={toggleMenu}>
               <li>Home</li>
             </Link>
-            <Link to="/how_to_use">
+            <Link to="/how_to_use" onClick={toggleMenu}>
               <li>How To Use</li>
             </Link>
-            <Link to="/my_profile">
+            <Link to="/my_profile" onClick={toggleMenu}>
               <li>My Account</li>
             </Link>
-            <Link to="/options">
+            <Link to="/options" onClick={toggleMenu}>
               <li>Get Started</li>
             </Link>
-            <Link to="/options">
+            <Link to="/options" onClick={toggleMenu}>
               <li>My Resumes</li>
             </Link>
-            <Link to="/templates">
+            <Link to="/templates" onClick={toggleMenu}>
               <li>Templates</li>
             </Link>
-            <Link to="/options">
+            <Link to="/options" onClick={toggleMenu}>
               <li>Create My Resume</li>
             </Link>
           </ul>

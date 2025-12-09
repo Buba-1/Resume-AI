@@ -1,23 +1,86 @@
+/* slider.module.css */
+
+/* --- BASE STYLES (Mobile First) --- */
+
 .slidercontainer {
-  overflow-x: hidden;
+  /* Crucial for infinite slider and resolving horizontal scroll issue */
+  overflow-x: hidden; 
   white-space: nowrap;
   width: 100%;
   box-sizing: border-box;
-  background-color: #000080;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  background-color: #000080; /* Primary Navy Background */
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .slidertrack {
   display: flex;
-  width: max-content;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  /* Use max-content; this must NOT be fixed width */
+  width: max-content; 
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  /* Animation remains constant across all screen sizes */
+  animation: slide 60s linear infinite;
 }
 
 .sliderimage {
-  height: 500px;
+  /* Base Image Height for Mobile/Small Screens */
+  height: 300px;
   object-fit: cover;
-  margin-right: 30px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  margin-right: 15px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+  /* Ensures images don't shrink and maintain original size */
+  flex-shrink: 0; 
+}
+
+/* 4. The Keyframe Animation (The fix is here) */
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* *** CRITICAL FIX: The track must move exactly half of its total width (50%) to perfectly align the second set with the first, creating the seamless loop. *** */
+    transform: translateX(-50%); 
+  }
+}
+
+/* --- MEDIA QUERIES FOR RESPONSIVENESS --- */
+
+/* Tablet Screens (e.g., width > 600px) */
+@media (min-width: 600px) {
+  .slidercontainer {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .slidertrack {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .sliderimage {
+    height: 400px;
+    margin-right: 25px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+}
+
+/* Laptop/Desktop Screens (e.g., width > 992px) */
+@media (min-width: 992px) {
+  .slidercontainer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .slidertrack {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .sliderimage {
+    height: 500px;
+    margin-right: 40px;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.9);
+  }
 }

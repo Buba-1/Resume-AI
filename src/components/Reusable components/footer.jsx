@@ -1,22 +1,26 @@
 // Footer.jsx
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Footer.css";
+import styles from "./footer.module.css"; // Imported as 'styles'
 
 export default function Footer() {
   return (
-    <footer className="footer-container">
-      <div className="footer-grid">
+    // Updated className to styles.footerContainer
+    <footer className={styles.footerContainer}>
+      {/* Updated className to styles.footerGrid */}
+      <div className={styles.footerGrid}>
         {/* Call to Action */}
-        <div className="footer-card">
+        {/* Updated className to styles.footerCard */}
+        <div className={styles.footerCard}>
           <h3>Ready to Build Your Resume?</h3>
-          <a className="cta-button" href="#">
+          {/* Updated className to styles.ctaButton */}
+          <a className={styles.ctaButton} href="#">
             Get Started Now
           </a>
         </div>
 
         {/* Quick Links */}
-        <div className="footer-card">
+        <div className={styles.footerCard}>
           <h3>Quick Links</h3>
           <ul>
             <li>
@@ -35,7 +39,7 @@ export default function Footer() {
         </div>
 
         {/* Resources / Legal */}
-        <div className="footer-card">
+        <div className={styles.footerCard}>
           <h3>Resources & Legal</h3>
           <ul>
             <li>
@@ -63,7 +67,7 @@ export default function Footer() {
         </div>
 
         {/* AI Safety Disclaimer */}
-        <div className="footer-card">
+        <div className={styles.footerCard}>
           <h3>AI Safety & Data Use</h3>
           <p>
             Your voice data is processed securely and never stored permanently.
@@ -72,7 +76,7 @@ export default function Footer() {
         </div>
 
         {/* Contact & Support */}
-        <div className="footer-card">
+        <div className={styles.footerCard}>
           <h3>Contact & Support</h3>
           <ul>
             <li>
@@ -88,7 +92,7 @@ export default function Footer() {
         </div>
 
         {/* Social Media */}
-        <div className="footer-card">
+        <div className={styles.footerCard}>
           <h3>Follow Us</h3>
           <ul>
             <li>
@@ -103,7 +107,7 @@ export default function Footer() {
           </ul>
         </div>
         {/* Branding + Mission */}
-        <div className="footer-card">
+        <div className={styles.footerCard}>
           <h3>VoiceResumeAI</h3>
           <p>
             Your AI-powered voice assistant that creates modern, ATS-friendly
@@ -112,7 +116,8 @@ export default function Footer() {
         </div>
       </div>
 
-      <p className="footer-copy">
+      {/* Updated className to styles.footerCopy */}
+      <p className={styles.footerCopy}>
         © {new Date().getFullYear()} VoiceResumeAI — All rights reserved.
       </p>
     </footer>

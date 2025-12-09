@@ -1,4 +1,3 @@
-import { useEffect, useRef } from "react";
 import styles from "./slider.module.css";
 import img1 from "../../assets/images/resume1.webp";
 import img2 from "../../assets/images/resume2.png";
@@ -13,28 +12,11 @@ import img9 from "../../assets/images/resume9.png";
 const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
 
 function Slider() {
-  const sliderRef = useRef(null);
-
-  useEffect(() => {
-    const slider = sliderRef.current;
-    let scrollAmount = 0;
-    const speed = 1; // pixels per frame
-
-    function step() {
-      scrollAmount += speed;
-      if (scrollAmount >= slider.scrollWidth / 2) {
-        scrollAmount = 0;
-      }
-      slider.scrollLeft = scrollAmount;
-      requestAnimationFrame(step);
-    }
-
-    requestAnimationFrame(step);
-  }, []);
-
+  // Removed useRef and useEffect, as CSS handles the animation.
   return (
-    <div className={styles.slidercontainer} ref={sliderRef}>
+    <div className={styles.slidercontainer}>
       <div className={styles.slidertrack}>
+        {/* Concatenated array for seamless looping */}
         {images.concat(images).map((src, index) => (
           <img
             key={index}

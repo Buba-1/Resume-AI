@@ -1,0 +1,146 @@
+/* footer.module.css */
+
+/* --- Responsive Font Sizing Strategy (For all elements) --- */
+/* Use 'rem' for base sizing, and 'clamp' for fluid sizing on key elements. */
+
+/* Base Font Size for the entire footer container */
+.footerContainer {
+  width: 100%;
+  background-color: navy;
+  color: white;
+  padding: 40px 15px;
+  margin-top: 50px;
+  /* Set a fluid font size for H3 titles: Min (1rem), Fluid (2vw), Max (1.25rem) */
+  /* This ensures the text scales nicely on different screens. */
+  font-size: clamp(1rem, 2vw, 1.25rem); 
+}
+
+/* FLEXBOX CONTAINER */
+.footerGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between cards */
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* CARD STYLE - Mobile Default: Stacking */
+.footerCard {
+  /* On small screens, cards take up almost full width (95%) */
+  width: 95%; 
+  padding: 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+  color: white;
+  background-color: rgba(0, 0, 80, 0.2); 
+}
+
+/* Titles */
+.footerCard h3 {
+  margin-bottom: 12px;
+  /* Fluid sizing for titles: Min (1.125rem), Fluid (2.5vw), Max (1.25rem) */
+  font-size: clamp(1.125rem, 2.5vw, 1.25rem); 
+  font-weight: bold;
+  color: #e6eeff;
+}
+
+/* Lists */
+.footerCard ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerCard ul li {
+  margin-bottom: 8px;
+}
+
+/* Links */
+.footerCard a {
+  color: #dbe9ff;
+  text-decoration: none;
+  transition: 0.2s ease;
+  font-size: 0.95em; /* Inherit and slightly reduce from container font size */
+}
+
+.footerCard a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+/* CTA Button */
+.ctaButton {
+  display: inline-block;
+  padding: 10px 18px;
+  background: #38c172; 
+  color: white; 
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.2s ease;
+  font-size: 1rem;
+}
+
+.ctaButton:hover {
+  background: #dbe9ff;
+  color: navy;
+}
+
+/* Copy text */
+.footerCopy {
+  text-align: center;
+  margin-top: 30px; 
+  /* Fluid sizing for copyright: Min (0.75rem), Fluid (2vw), Max (0.875rem) */
+  font-size: clamp(0.75rem, 2vw, 0.875rem); 
+  opacity: 0.8;
+  color: #e8efff;
+}
+
+/* --- Media Queries for Responsiveness (Flexbox & Percentages) --- */
+
+/* Tablet View (e.g., 600px and up) */
+@media (min-width: 600px) {
+  .footerContainer {
+    padding: 50px 20px;
+  }
+
+  /* 2-column layout on tablet */
+  .footerCard {
+    /* Two cards per row: 48% width allows for 2% gap (1% on each side of two cards) */
+    width: 48%; 
+  }
+
+  .footerGrid {
+    /* Use space-between for perfect distribution on 2-column layout */
+    justify-content: space-between; 
+    gap: 15px; /* Adjust gap to look good with 48% width */
+  }
+}
+
+/* Laptop/Desktop View (e.g., 1024px and up) */
+@media (min-width: 1024px) {
+  .footerContainer {
+    padding: 60px 20px;
+  }
+
+  .footerGrid {
+    /* Reset to center/even distribution, allowing more cards per row */
+    justify-content: flex-start;
+    gap: 25px;
+  }
+
+  .footerCard {
+    /* Approximately 4 cards per row: (4 * 23%) = 92% + gaps */
+    width: 23%; 
+    background-color: transparent;
+  }
+}
+
+/* Large Desktop View (e.g., 1400px and up) */
+@media (min-width: 1400px) {
+  .footerCard {
+    /* Approximately 5 cards per row: (5 * 18%) = 90% + gaps */
+    width: 18%; 
+  }
+}

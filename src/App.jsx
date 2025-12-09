@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
+import "./main.css";
 import Home from "./pages/home";
 import Getstartedwindow from "../src/components/getstartedscreen/getstartedscreen";
 import Resume from "./components/buildercomponent/builderwindow";
